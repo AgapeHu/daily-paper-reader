@@ -1,0 +1,225 @@
+Title: OPTIMUS: Optimization Productivity Tool for Intelligent Management of Utilizable Space
+
+URL Source: https://arxiv.org/pdf/2605.14430v1
+
+Published Time: Fri, 15 May 2026 00:40:17 GMT
+
+Number of Pages: 6
+
+Markdown Content:
+# OPTIMUS: Optimization Productivity Tool for Intelligent Management of Utilizable Space 
+
+Souvik Bhattacharyya, * 1 Nisha Singh, * 1 Salman Haider, 1 Balaji Nagarajan, 1 Ved Prakash Dwivedi, 1
+
+Nithin Surendran, 1 Karthik Nair 1
+
+# Abstract 
+
+We study department-level retail space optimiza-tion, where limited bay capacity must be allocated among planograms (POGs) under business and op-erational constraints. The problem is formulated as a linear binary knapsack model, with poten-tial SKUs treated as items characterized by space requirements and weighted value contributions from sales, margin, units, and assortment simi-larity. Dynamic Programming (DP) is employed to obtain exact and reproducible assortment de-cisions in O(nc ) time, avoiding the variance in-herent in heuristic approaches. These decisions are integrated with a second-stage bay optimiza-tion model formulated as a mixed-integer pro-gram. Evaluated end-to-end across ten optimiza-tion runs spanning multiple departments and store clusters, the OPTIMUS framework achieves an average sales lift of 11.8% and an average margin lift of 9.5%. Overall, OPTIMUS provides a scal-able, interpretable, and profit-driven solution for enterprise-scale retail space management. 
+
+# 1. Introduction 
+
+In the retail industry, physical space is directly tied to rev-enue generation, making the efficient utilization of available space a critical challenge. Retail floor areas are typically divided into bays (Curhan, 1972), which represent the fun-damental sellable units where products are displayed. These bays are then aggregated into planograms or POGs – visual merchandising blueprints that define product placement and category layouts across stores. Planograms, in turn, roll upward into broader selling departments that drive prof-itability. It is at the department level that the problem of 
+
+> *
+
+Equal contribution 1Lowes’, 1000 Lowe’s Boulevard Mooresville, NC 28117 . Correspondence to: Ved Prakash Dwivedi <vedprakash.dwivedi@lowes.com >.
+
+Proceedings of the 42 nd International Conference on Machine Learning , Vancouver, Canada. PMLR 267, 2025. Copyright 2025 by the author(s). 
+
+space optimization becomes most prominent, as it directly affects both store-level performance metrics and strategic decision-making (Corstjens & Doyle, 1981; Dreze et al., 1994) Retailers operate under increasing pressure to maximize profitability within constrained store footprints. As cus-tomer demand for product variety grows, the tension be-tween limited physical space and the need for broad assort-ments intensifies. This makes space allocation not only an operational task but also a strategic decision that influences category management, supplier negotiations, and overall store performance (H ¨ubner & Schaal, 2017). Traditional research in this area has proposed a variety of models for space management (Urban, 1998), ranging from demand-based space elasticity frameworks (Dreze et al., 1994) to heuristic algorithms and mixed-integer programming ap-proaches (Van Donselaar et al., 2010) While these methods offer valuable insights, they often operate at the bay or shelf level, focusing on micro-optimizations of product arrange-ments. However, such models can overlook the aggregated effects at the department level, where space allocation deci-sions yield the greatest managerial impact. Moreover, many existing formulations are nonlinear and computationally intensive, posing practical challenges for implementation in large-scale retail environments. From an operations re-search perspective, the problem aligns closely with combina-torial optimization. The knapsack problem and its variants have emerged as useful abstractions for modeling resource-constrained allocation problems, including those found in retail (Kellerer et al., 2004). By adapting this framework to the retail context, it is possible to formalize the trade-off between limited shelf space and the maximization of profit in a mathematically tractable way. Despite substantial research efforts, there remain two criti-cal gaps in the literature. First, most existing studies focus on localized shelf or bay-level optimization without ade-quately addressing department-level decision-making. Sec-ond, many models rely on nonlinear demand functions or complex simulation methods that limit their applicability in practice. This creates a disconnect between academic approaches and the needs of retailers, who require scalable, 1
+
+> arXiv:2605.14430v1 [math.OC] 14 May 2026
+
+computationally efficient solutions that can be readily inte-grated into operational workflows. At the selling department level, where profitability and product strategy converge, the challenge is to allocate limited bay space in a way that maximizes returns while respecting category-level and orga-nizational constraints. Given the increasing complexity of modern retail assortments, solving this optimization prob-lem in a tractable and practical manner is essential. This paper addresses the gap by framing department-level retail space optimization as a linearized binary knapsack problem. In this formulation, each product category rep-resents an item with associated profit potential, while the department’s available bay space serves as the knapsack capacity. The binary structure models inclusion or exclu-sion decisions, and the linearization ensures computational feasibility for large-scale retail applications. The contribu-tions of this study are threefold: Model Development – We introduce a novel application of the binary knapsack prob-lem to department-level space allocation, bridging the gap between bay-level optimization and higher-level managerial decision-making. Computational Tractability – We pro-pose a linearized formulation that is solvable with standard optimization tools, making it accessible and scalable for real-world retail environments. Managerial Insights – We demonstrate how the model can inform practical trade-offs between product variety, planogram design, and profitabil-ity, offering actionable guidance for category management and strategic planning. By combining theoretical rigor with practical applicability, this work contributes to both the oper-ations research literature and the retail industry, providing a framework for addressing one of the sector’s most pressing optimization challenges. 
+
+# 2. Methodology 
+
+To operationalize the proposed framework, we adopt a two-step optimization approach designed to reflect both the strategic and operational layers of retail space management. The first step, planogram optimization, determines which products should be selected for stocking on shelves. This decision is driven by key performance indicators such as historical sales volume and contribution margins, ensuring that the chosen product set maximizes expected profitability while maintaining assortment relevance. By framing this step as a selection problem, we effectively filter the wide product universe down to the most economically viable candidates for display. Building on this foundation, the second step, bay optimiza-tion, addresses the allocation of physical shelf space across selling departments. Here, the focus shifts from item-level selection to space distribution, determining how much of the available bay capacity should be dedicated to each de-partment based on the previously chosen assortments. This step balances the competing demands of different depart-ments, ensuring that space is distributed in proportion to profitability potential while respecting organizational con-straints. Together, the two steps create a structured pathway: first identifying the what (products to stock), and then opti-mizing the how much (space to allocate), thereby aligning product assortment strategies with space utilization for max-imum overall returns. 
+
+2.1. Planogram optimization 
+
+A POG is defined as a structured set of items that together represent a specific product category or display unit within a retail store. At the most granular level, we have individual items (for example, different brands or models of refriger-ators). When a collection of such related items is grouped together, it forms a planogram—for instance, a Refrigerator POG or a Dishwasher POG. Multiple planograms are then aggregated into a selling department, such as the Appliances Department, which may include refrigerator and dishwasher POGs. To determine how much space should be allocated to a given POG, it is essential to estimate the value generated under dif-ferent space configurations. The POG optimization problem is therefore defined as finding the optimal subset of items to include within a POG for a specified amount of available space (Gallego & Topaloglu, 2019). This optimization is performed for every possible space allocation and for each POG. The resulting outputs then serve as inputs to the subse-quent bay optimization stage, which determines the optimal space distribution among POGs within a department. The total display area available for product placement within a planogram is defined as its capacity, which represents the upper limit of linear shelf space that can be allocated. Each POG contains a set of potential items—the SKUs that could be included in the assortment. These items may be local (currently stocked in the store and supported by actual sales data) or non-local (not presently carried but with sales po-tential estimated from comparable stores within the same regional cluster). Each item occupies a fixed amount of shelf space and is characterized by an average selling price (ASP) and an average margin per unit (AMPU). Because some products may exhibit substitution or complementarity effects, the overall demand associated with an assortment depends not only on the individual performance of items but also on their combined composition. These item-level parameters form the basis for the subsequent optimization, enabling the model to balance spatial constraints with rev-enue and profitability objectives. To balance different business objectives, the optimization framework incorporates weighted preferences across mul-tiple metrics—sales, margin, units sold, and assortment similarity. These weights are represented by the vector 2λ = ( λsales , λ margin , λ units , λ similarity ) (2.1) allowing users to emphasize specific goals, such as prior-itizing margin over sales. Each item’s contribution to the objective function is computed as a weighted sum of these metrics. We denote the subset of items included in a given assortment by an indicator vector x ∈ { 0, 1}n, where n is the total number of potential items. For an item i, the component 
+
+xi = 1 indicates that the item is included in the assortment, while xi = 0 indicates exclusion. Using the inputs described above, we define the objective function 
+
+f : {0, 1}n → [0 , ∞) (2.2) and formalize the POG optimization problem as a variant of the binary knapsack problem. Two formulations are possi-ble: a linear knapsack problem, which assumes no inter-item dependencies (i.e., no substitution or complementarity ef-fects), and a quadratic knapsack problem, which accounts for pairwise item interactions. To simplify computation and enhance scalability, the current implementation employs the linear knapsack formulation, excluding direct item-to-item interaction effects. The consideration of quadratic effects is reserved for future extensions of this work. 2.1.1. T HE LINEAR BINARY KNAPSACK PROBLEM 
+
+In certain POGs, the interaction effects between items are negligible, unavailable, or statistically insignificant. When this occurs, it is reasonable to assume independence among the potential items within a POG. This assumption simplifies the overall optimization problem by removing substitution or complementarity effects, allowing it to be formulated as a linear binary knapsack problem. In this linear case, each item’s contribution to the total objective is constant and unaffected by the inclusion or exclusion of other items. The linear objective function can be expressed as: 
+
+f (x) = 
+
+> n
+
+X
+
+> i=1
+
+qixi = xTq (2.3) where n denotes the number of potential items, x ∈ { 0, 1}n
+
+represents the binary assortment vector, and q is the objec-tive vector , with each qi indicating the contribution of item 
+
+i to the overall objective value. The objective vector q is derived component-wise using the weight vector as given in eq. 2.1, the estimated demand vector d, and the baseline assortment x0, as follows 
+
+mi = piλsales + giλmargin + λunits (2.4) 
+
+qi = midi + (2 x0 
+
+> i
+
+− 1) λsimilarity (2.5) for i = 1 , . . . , n . Here, the vector m functions as the de-mand objective multiplier, translating expected demand into performance-based measures such as total sales, margin, or units sold. The similarity component, which is indepen-dent of demand, captures the deviation between the opti-mized and baseline assortments. To compute the similarity term, qsimilarity = 2 x0 
+
+> i
+
+− 1, the baseline assortment vec-tor x0 is transformed from 0 to a -1 using the mapping 
+
+x → 2x − 1. This ensures that both additions and removals of items ( 0 → 1 and 1 → 0 transitions) are penalized sym-metrically, thereby treating all potential items uniformly. Conceptually, this component can be interpreted as a con-stant (representing the total number of items in the baseline assortment) minus the Hamming distance between x and x0.The penalty for deviation is scaled by the weight λsimilarity 
+
+, providing flexibility in how strongly assortment changes are discouraged. When item-level operational data are avail-able, this framework can be further refined by replacing the generic penalty with item-specific switching costs, offer-ing a more accurate reflection of real-world merchandising constraints. 2.1.2. POG OPTIMIZATION ALGORITHMS 
+
+A variety of algorithms can be employed to solve knapsack-style optimization problems (Ahmed & Shapiro, 2008), each offering distinct trade-offs between computational ef-ficiency, solution quality, and implementation complexity. Common approaches include Brute Force, Greedy, Greedy Productivity, Mixed Integer Programming (MIP), and Ge-netic Algorithms (GA). Brute Force methods guarantee op-timality by evaluating all possible combinations but are computationally infeasible for large problem sizes. Greedy-based techniques are computationally efficient but often yield approximate solutions that may deviate from the global optimum. MIP formulations provide flexibility for incorpo-rating complex constraints but can become computationally expensive as the problem scales. Metaheuristic methods such as GA introduce stochasticity, which enhances solu-tion diversity but also leads to variability in outcomes and higher tuning costs. In this study, we adopt Dynamic Programming as the pri-mary optimization approach for solving the linear binary knapsack formulation of the POG optimization problem. It leverages the inherent optimal substructure and overlap-ping subproblems properties of the knapsack framework to compute exact solutions efficiently (Martello & Toth, 1990). By decomposing the problem into smaller subprob-lems and systematically combining their solutions (Pisinger, 1999), it achieves optimal results in pseudo-polynomial 3time—offering a balance between computational tractabil-ity and accuracy. Compared to brute force enumeration or heuristic techniques, dynamic programming provides a deterministic, reproducible, and computationally efficient foundation for POG optimization, making it well-suited for large-scale retail applications. 2.1.3. D YNAMIC PROGRAMMING 
+
+Dynamic Programming (DP) is an optimization technique that decomposes a complex problem into a series of over-lapping subproblems, solves each of them once, and reuses these solutions to efficiently construct an optimal solution to the original problem. By systematically building from smaller instances, DP avoids redundant computations and exploits the problem’s inherent optimal substructure and overlapping subproblem properties. In the context of the linear binary knapsack problem, DP provides an exact and computationally efficient solution. Whereas brute-force enumeration explores all possible item combinations with exponential complexity, DP achieves optimality in pseudo-polynomial time by storing intermediate results in a struc-tured manner. Specifically, a two-dimensional objective table m[i, j ] of size (n, W ) is constructed, where each entry represents the maximum value attainable using the first i
+
+items and a capacity limit j. If wi and vi denote the weight (space requirement) and value (objective contribution) of item i, respectively, the recurrence relation is defined as:                  
+
+> m[i, j ] =
+> (
+> m[i−1, j ],if wi> j,
+> max  m[i−1, j ], m [i−1, j −wi] + vi
+> ,if wi≤j
+
+(2.6) The computational complexity of the DP algorithm for the linear knapsack formulation is O(nc ) where n denotes the number of potential items in the POG and c represents the total available capacity. In practice, the capacity c can be scaled by adjusting the measurement units of shelf space (e.g., using half-inch or quarter-inch increments instead of finer units), thereby reducing the effective problem size with-out sacrificing solution quality. This makes DP both exact and scalable, providing a robust foundation for planogram-level optimization in large retail environments. 
+
+2.2. Bay optimization 
+
+This section develops and formulates the space optimization problem at the departmental level, where the objective is to determine the optimal allocation of available bays among different POGs within a given product category. For each category, the optimization solution specifies the amount of space—measured in bays—to be assigned to each POG, en-suring efficient utilization of the total available space. The model takes as input several key parameters for each POG 
+
+i, the minimum ( min i), the maximum ( max i) allowable bay allocations, the multiplicity constraint ( mi), which de-fines the smallest divisible unit of space (when fractional allocations are permissible), and the elasticity function fi,represented by its coefficients, which describes the rela-tionship between allocated space and expected sales (or margin). Additionally, the total number of bays s avail-able for a category serves as a global constraint on space allocation. The elasticity function fi captures how sales or margin performance varies with changes in the allocated space for each POG. While the function need not always be represented explicitly by its coefficients, for illustrative purposes, logarithmic forms are employed in this section to model diminishing returns with respect to space expansion. The estimation of elasticity curves is performed by analyz-ing empirical dependencies between space and sales across store clusters, allowing the model to generalize performance patterns across similar retail environments. However, accu-rately estimating these elasticity functions presents several challenges, particularly due to the impact of clustering on model stability and accuracy (K ¨ok & Fisher, 2007). The composition and granularity of store clusters significantly influence the shape of elasticity curves and, consequently, the optimization results. Addressing these challenges mo-tivated the development of Model Version 1 (v1), which incorporates improved clustering strategies and more robust estimation procedures for elasticity modeling. 2.2.1. MIP FORMULATION 
+
+In this section we present a MIP for the problem. The integer variables for the formulation are the xi. Together with the multiples mi they indicate the bay allocation to POG. 
+
+xi indicates number of mi bays allocated the ith POG. For example, if mi = 12 then xi provides the number of half bays allocated to POG i.
+
+yi = mixi indicates number of bays allocated to the 
+
+ith POG. If the multiple mi is not 1, then yi can assume fractional values. The objective is to maximize the total number of sales (or margin) based on the bay allocation for each POG in the category: 
+
+max 
+
+> n
+
+X
+
+> i=0
+
+fi(yi)
+
+Variable yi accounts for total bay allocation for all i =0, . . . , n : nX
+
+> i=0
+
+mixi = yi (2.7) Each category has minimum and maximum bay allocation 4requirements: 
+
+min i ≤ yi ≤ max i, for all i = 0 , . . . , n (2.8) We require that at most s bays are allocated: 
+
+> n
+
+X
+
+> i=0
+
+mixi ≤ s (2.9) The variables xi are non-negative integers: 
+
+xi ∈ Z, for all i = 0 , . . . , n (2.10) 
+
+xi ≥ 0, for all i = 0 , . . . , n (2.11) 2.2.2. S OLUTION 
+
+In order to solve the above MIP formulation we linearize the functions fi to transform the formulation into a linear MIP. Notice that the problem is separable because the decision variables yi appear separately in each function fi. We use integer breakpoints between min i and max i to derive piecewise-linear approximation f ai for fi. For example, if 
+
+min i = 2 and max i = 4 then the approximation curve 
+
+f ai (yi) = fi(2) λi0 + fi(2) λi1 + fi(2) λi2, where 
+
+yi = 2 λi0 + 3 λi1 + 4 λi2 (2.12) 
+
+λi0 + λi1 + λi2 = 1 (2.13) 
+
+λij ≥ 0, for all j = 0 , 1, 2 (2.14) We assume that the objective function is concave. We con-clude that the adjacency condition holds. The transformed formulation in standard form is the follow-ing: 
+
+max 
+
+> n
+
+X
+
+> i=0
+> max i
+
+X
+
+> j=min i
+
+λij fi(j)
+
+zi = −mixi +
+
+> max i
+
+X
+
+> j=min i
+
+jλ ij , for all i = 0 , . . . , n (2.15) 
+
+zn+k =
+
+> max i
+
+X
+
+> j=min i
+
+λij , k = 0 , . . . , n (2.16) 
+
+> n
+
+X
+
+> i=0
+
+mixi ≤ s (2.17) 
+
+zi = 0 , for all i = 0 , . . . , n (2.18) 
+
+zn+k = 1 , for all k = 0 , . . . , n (2.19) 
+
+xi ∈ Z, for all i = 0 , . . . , n (2.20) 
+
+xi ≥ 0, for all i = 0 , . . . , n (2.21) Upon constructing the MIP formulation, we solve it using OR-Tools. 
+
+# 3. Results 
+
+To evaluate the overall effectiveness of the OPTIMUS frame-work, we analyzed its end-to-end impact on sales and margin across ten recent optimization runs spanning multiple de-partments and store clusters. For each run, we compared pre- and post-optimization outcomes using historical data, capturing the combined effect of assortment selection and space allocation without isolating individual optimization stages. Across the ten runs, OPTIMUS achieved an average sales lift of 11 .83% ± 4.75% and an average gross margin lift of 9.50% ± 3.27% . These results indicate consistent and substantial improvements in financial performance, with variability reflecting differences in department composition, elasticity characteristics, and baseline space utilization. Overall, the findings demonstrate that OPTIMUS delivers robust, reproducible gains at the department level while remaining scalable across heterogeneous store environments. By jointly optimizing assortment and space decisions, the framework provides a practical and explainable decision-support tool for enterprise-scale retail space management.  
+
+> Table 1. Overall performance lift across 10 optimization runs.
+
+Metric Lift (%) 
+
+Sales 11 .83 ± 4.75 
+
+Margin 9.50 ± 3.27 
+
+# 4. Future Directions 
+
+While OPTIMUS currently uses a user-specified multi-objective weight vector λ = ( λsales , λ margin , λ units , λ similarity ),a promising extension is to learn these weights from histori-cal outcomes rather than setting them manually. Concretely, one can parameterize λ as λθ ∈ R4+ (e.g., using a softplus transform) and optimize θ to minimize a downstream loss 5defined on realized business outcomes (e.g., profit or margin lift, with optional stability penalties for assortment churn). A key challenge is that the planogram optimizer produces discrete decisions (a binary knapsack solution). This can be addressed by using a differentiable surrogate during train-ing, such as a continuous relaxation of the knapsack deci-sion variables, or perturbation-based gradient estimators, and then deploying the original exact dynamic program-ming solver at inference time with the learned λ. This decision-focused learning direction would reduce manual tuning and better align planogram decisions with end-to-end financial objectives, while preserving interpretability through the learned, human-readable weights. Additional future work includes incorporating substitu-tion and cannibalization effects (moving beyond the lin-ear knapsack assumption), extending elasticity estimation with uncertainty-aware or robust optimization, and explor-ing multi-period settings where planogram changes incur explicit operational switching costs. 
+
+# 5. Conclusions 
+
+We introduced OPTIMUS, an enterprise-scale framework for department-level retail space optimization that couples exact planogram assortment selection with departmental bay allocation. At the planogram level, OPTIMUS casts assort-ment construction as a linear binary knapsack problem and solves it via Dynamic Programming to produce determin-istic, reproducible assortments under capacity constraints. These outputs feed a bay-level mixed-integer optimization model that allocates space across POGs while enforcing op-erational constraints. Across multiple departments and store clusters, the end-to-end results demonstrate that jointly opti-mizing what to carry and how much space to allocate can consistently improve financial performance while remain-ing scalable and interpretable for real-world merchandising workflows. 
+
+# References 
+
+Ahmed, S. and Shapiro, A. Solving chance-constrained stochastic programs via sampling and integer program-ming. In State-of-the-art decision-making tools in the information-intensive age , pp. 261–269. Informs, 2008. Corstjens, M. and Doyle, P. A model for optimizing retail space allocations. Management Science , 27(7):822–833, 1981. Curhan, R. C. The relationship between shelf space and unit sales in supermarkets. Journal of Marketing Research , 9 (4):406–412, 1972. Dreze, X., Hoch, S. J., and Purk, M. E. Shelf management and space elasticity. Journal of retailing , 70(4):301–326, 1994. Gallego, G. and Topaloglu, H. Assortment optimization. In 
+
+Revenue management and pricing analytics , pp. 129–160. Springer, 2019. H ¨ubner, A. and Schaal, K. An integrated assortment and shelf-space optimization model with demand substitu-tion and space-elasticity effects. European Journal of Operational Research , 261(1):302–316, 2017. Kellerer, H., Pferschy, U., and Pisinger, D. Multidimen-sional knapsack problems. In Knapsack problems , pp. 235–283. Springer, 2004. K ¨ok, A. G. and Fisher, M. L. Demand estimation and assortment optimization under substitution: Methodology and application. Operations research , 55(6):1001–1021, 2007. Martello, S. and Toth, P. Knapsack problems: algorithms and computer implementations . John Wiley & Sons, Inc., 1990. Pisinger, D. An exact algorithm for large multiple knapsack problems. European Journal of Operational Research ,114(3):528–541, 1999. Urban, T. L. An inventory-theoretic approach to product as-sortment and shelf-space allocation. Journal of Retailing ,74(1):15–35, 1998. Van Donselaar, K. H., Gaur, V., Van Woensel, T., Broek-meulen, R. A., and Fransoo, J. C. Ordering behavior in retail stores and implications for automated replenish-ment. Management Science , 56(5):766–784, 2010. 6
