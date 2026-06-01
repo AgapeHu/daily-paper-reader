@@ -1,0 +1,1488 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-01T23:14:43.194532+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 7,
+    "deep_divecandidates": 42,
+    "deep_cap": 12,
+    "deep_selected": 15,
+    "quick_candidates": 50,
+    "quick_skim_target": 17,
+    "quick_selected": 17
+  },
+  "deep_dive": [
+    {
+      "id": "2605.25246v1",
+      "source": "arxiv",
+      "title": "FrontierOR: Benchmarking LLMs' Capacity for Efficient Algorithm Design in Large-Scale Optimization",
+      "abstract": "Large language models (LLMs) are increasingly used for optimization modeling and solver-code generation, yet practical operations research and optimization problems often require a harder capability: designing scalable algorithms that exploit problem structure and outperform direct formulation-and-solve baselines. Existing benchmarks are limited to small or simplified examples far below real-world scale and complexity. We introduce FrontierOR, among the first benchmarks to systematically evaluate LLM-based efficient algorithm design for realistic large-scale optimization problems. FrontierOR includes 180 tasks derived from methodologically diverse papers published in top-tier operations research venues, each with standardized instances and a hidden, expert-verified evaluation suite. We evaluate seven LLMs spanning frontier, cost-effective, and open-source models both in one-shot and test-time evolution settings. The results reveal that frontier models still struggle to move from executable formulations to efficient optimization algorithms: the strongest one-shot model outperforms Gurobi in only 31% of cases in both solution quality and computational efficiency, and even strong coding agents with test-time evolution achieve only 50% on selected hard tasks. FrontierOR establishes a practical evaluation platform for LLM-based optimization algorithm design, which enables future LLMs and agents to be systematically tested on whether they can move beyond correct formulation toward a feasible, high-quality, and efficient algorithm. Our FrontierOR Benchmark is available at https://anonymous.4open.science/r/efficient-opt-bench-F03D.",
+      "authors": [
+        "Minwei Kong",
+        "Chonghe Jiang",
+        "Ao Qu",
+        "Wenbin Ouyang",
+        "Zhaoming Zeng",
+        "Xiaotong Guo",
+        "Zhekai Li",
+        "Junyi Li",
+        "Yi Fan",
+        "Xinshou Zheng",
+        "Xi Jing",
+        "Yikai Zhang",
+        "Zhiwei Liang",
+        "Seonghoo Kim",
+        "Runqing Yang",
+        "Zijian Zhou",
+        "Sirui Li",
+        "Han Zheng",
+        "Wangyang Ying",
+        "Ou Zheng",
+        "Chonghuan Wang",
+        "Jinglong Zhao",
+        "Hanzhang Qin",
+        "Cathy Wu",
+        "Paul Pu Liang",
+        "Jinhua Zhao",
+        "Hai Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-24T20:10:42+00:00",
+      "link": "https://arxiv.org/pdf/2605.25246v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Benchmark for LLM-based algorithm design in large-scale operations research optimization",
+      "llm_evidence_cn": "评估LLM在大规模运筹优化中设计高效算法能力的基准",
+      "llm_evidence": "评估LLM在大规模运筹优化中设计高效算法能力的基准",
+      "canonical_evidence": "评估LLM在大规模运筹优化中设计高效算法能力的基准",
+      "llm_tldr_en": "Introduces FrontierOR, the first benchmark to evaluate LLMs for designing efficient algorithms in large-scale OR optimization problems, with 180 tasks from top OR venues.",
+      "llm_tldr_cn": "该论文提出FrontierOR基准，系统评估LLM为大规模运筹优化问题设计高效算法的能力。基准包含来自顶刊的180个任务，标准化了问题描述和评估流程。实验发现当前LLM在算法设计上仍有显著差距，为未来研究指明方向。",
+      "llm_tldr": "该论文提出FrontierOR基准，系统评估LLM为大规模运筹优化问题设计高效算法的能力。基准包含来自顶刊的180个任务，标准化了问题描述和评估流程。实验发现当前LLM在算法设计上仍有显著差距，为未来研究指明方向。",
+      "llm_tags": [
+        "query:llm-or:composite"
+      ],
+      "matched_query_tag": "query:llm-or:composite",
+      "matched_query_text": "Papers central to 请帮助我查找有关LLM和operation research有关的文章, especially work that connects or combines: applications of large language models in operations research; operations research optimization techniques; combinatorial optimization problems solved by LLM; reinforcement learning for operations research; large language models for operations research optimization; large language model applications in combinatorial optimization and decision making.",
+      "matched_requirement_id": "req-composite-llm-or",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29262v1",
+      "source": "arxiv",
+      "title": "Harmonizing Real-Time Constraints and Long-Horizon Reasoning: An Asynchronous Agentic Framework for Dynamic Scheduling",
+      "abstract": "The Dynamic Flexible Job Shop Scheduling Problem (DFJSP) necessitates a trade-off between instant reaction to stochastic disturbances and global optimization of production goals. Conventional priority rules are insufficiently flexible to handle complex disruptions, whereas learning-based approaches often compromise interpretability or fail to generalize across problem scales. Although Large Language Models (LLMs) offer advanced reasoning capabilities to bridge this gap, their substantial inference latency is incompatible with the millisecond-level decision cycles of industrial control systems. To resolve this conflict, we introduce RACE-Sched, an asynchronous agent-based framework that decouples policy execution from logical reasoning via a dual-stream architecture. The Reactive Stream executes low-latency symbolic heuristics to enable real-time dispatching, while the parallel Deliberative Stream leverages an LLM to synthesize, validate, and evolve these rules. Candidate rules undergo rigorous testing in a sandbox and are deployed via atomic updates, ensuring safety without blocking the control loop. Additionally, a semantic rule repository indexes validated heuristics for retrieval-based initialization which enhances transferability across problem scales. Extensive evaluations on GEN-Bench, MK-Bench, and JMS-Bench demonstrate that RACE-Sched outperforms leading Deep Reinforcement Learning and other LLM-based baselines. This approach harmonizes real-time constraints with long-horizon reasoning to achieve superior solution quality and robust adaptation to dynamic events.",
+      "authors": [
+        "Shijie Cao",
+        "Yuan Yuan",
+        "Jing Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-28T02:26:18+00:00",
+      "link": "https://arxiv.org/pdf/2605.29262v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:evolution-rl",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "LLM scheduling in production with asynchronous agentic framework",
+      "llm_evidence_cn": "LLM调度生产环境中的异步智能体框架",
+      "llm_evidence": "LLM调度生产环境中的异步智能体框架",
+      "canonical_evidence": "LLM调度生产环境中的异步智能体框架",
+      "llm_tldr_en": "RACE-Sched uses an asynchronous LLM-based agent framework to solve Dynamic Flexible Job Shop Scheduling, balancing real-time constraints and long-horizon optimization.",
+      "llm_tldr_cn": "动态柔性作业车间调度需平衡实时响应与全局优化，但LLM推理延迟高。提出RACE-Sched异步智能体框架，将策略执行与LLM推理解耦，在毫秒级决策周期下实现高效调度，兼顾可解释性和泛化能力。",
+      "llm_tldr": "动态柔性作业车间调度需平衡实时响应与全局优化，但LLM推理延迟高。提出RACE-Sched异步智能体框架，将策略执行与LLM推理解耦，在毫秒级决策周期下实现高效调度，兼顾可解释性和泛化能力。",
+      "llm_tags": [
+        "query:llm-planning"
+      ],
+      "matched_query_tag": "query:llm-planning",
+      "matched_query_text": "LLM scheduling in production",
+      "matched_requirement_id": "req-34",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25189v1",
+      "source": "arxiv",
+      "title": "Directional Alignment Mitigates Reward Hacking in Reinforcement Learning for Language Models",
+      "abstract": "Reward hacking arises when a model improves a proxy reward by exploiting shortcuts rather than solving the intended task. We study this failure mode through the geometry of reinforcement learning updates in language models and argue that hacking emerges when optimization drifts away from a stable low-dimensional learning trajectory. We analyze this drift through dominant singular directions of parameter updates and show that reward-hacking runs exhibit substantially larger directional change than clean runs. Motivated by this observation, we introduce trusted-direction projection, which constrains gradients to remain within a clean reference subspace. Across reward-hacking experiments on mathematical reasoning, the proposed approach delays shortcut exploitation and better preserves task performance.",
+      "authors": [
+        "Wenlong Deng",
+        "Jiaji Huang",
+        "Kaan Ozkara",
+        "Yushu Li",
+        "Christos Thrampoulidis",
+        "Xiaoxiao Li",
+        "Youngsuk Park"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-05-24T17:34:34+00:00",
+      "link": "https://arxiv.org/pdf/2605.25189v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:lh"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Trusted-direction projection to mitigate reward hacking in RL for language models",
+      "llm_evidence_cn": "用于语言模型强化学习中缓解奖励攻击的可信方向投影",
+      "llm_evidence": "用于语言模型强化学习中缓解奖励攻击的可信方向投影",
+      "canonical_evidence": "用于语言模型强化学习中缓解奖励攻击的可信方向投影",
+      "llm_tldr_en": "Analyzes reward hacking in RL for LLMs via geometric drift and proposes trusted-direction projection to constrain gradients, preventing shortcuts.",
+      "llm_tldr_cn": "针对语言模型强化学习中的奖励攻击问题，论文从参数更新几何角度分析攻击产生的漂移现象，提出可信方向投影方法，将梯度约束在干净参考子空间内，在数学推理任务上有效缓解奖励攻击。",
+      "llm_tldr": "针对语言模型强化学习中的奖励攻击问题，论文从参数更新几何角度分析攻击产生的漂移现象，提出可信方向投影方法，将梯度约束在干净参考子空间内，在数学推理任务上有效缓解奖励攻击。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model for reinforcement learning reward function design",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25246v2",
+      "source": "arxiv",
+      "title": "FrontierOR: Benchmarking LLMs' Capacity for Efficient Algorithm Design in Large-Scale Optimization",
+      "abstract": "Large language models (LLMs) are increasingly used for optimization modeling and solver-code generation, yet practical operations research and optimization problems often require a harder capability: designing scalable algorithms that exploit problem structure and outperform direct formulation-and-solve baselines. Existing benchmarks are limited to small or simplified examples far below real-world scale and complexity. We introduce FrontierOR, among the first benchmarks to systematically evaluate LLM-based efficient algorithm design for realistic large-scale optimization problems. FrontierOR includes 180 tasks derived from methodologically diverse papers published in top-tier operations research venues, each with standardized instances and a hidden, expert-verified evaluation suite. We evaluate seven LLMs spanning frontier, cost-effective, and open-source models both in one-shot and test-time evolution settings. The results reveal that frontier models still struggle to move from executable formulations to efficient optimization algorithms: the strongest one-shot model outperforms Gurobi in only 31% of cases in both solution quality and computational efficiency, and even strong coding agents with test-time evolution achieve only 50% on selected hard tasks. FrontierOR establishes a practical evaluation platform for LLM-based optimization algorithm design, which enables future LLMs and agents to be systematically tested on whether they can move beyond correct formulation toward a feasible, high-quality, and efficient algorithm.",
+      "authors": [
+        "Minwei Kong",
+        "Chonghe Jiang",
+        "Ao Qu",
+        "Wenbin Ouyang",
+        "Zhaoming Zeng",
+        "Xiaotong Guo",
+        "Zhekai Li",
+        "Junyi Li",
+        "Yi Fan",
+        "Xinshou Zheng",
+        "Xi Jing",
+        "Yikai Zhang",
+        "Zhiwei Liang",
+        "Seonghoo Kim",
+        "Runqing Yang",
+        "Zijian Zhou",
+        "Sirui Li",
+        "Han Zheng",
+        "Wangyang Ying",
+        "Ou Zheng",
+        "Chonghuan Wang",
+        "Jinglong Zhao",
+        "Hanzhang Qin",
+        "Cathy Wu",
+        "Paul Pu Liang",
+        "Jinhua Zhao",
+        "Hai Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-24T20:10:42+00:00",
+      "link": "https://arxiv.org/pdf/2605.25246v2",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmark for LLM-based algorithm design in large-scale OR optimization",
+      "llm_evidence_cn": "大规模运筹优化中基于LLM的算法设计基准",
+      "llm_evidence": "大规模运筹优化中基于LLM的算法设计基准",
+      "canonical_evidence": "大规模运筹优化中基于LLM的算法设计基准",
+      "llm_tldr_en": "Introduces FrontierOR, a benchmark evaluating LLMs on designing scalable algorithms for realistic large-scale operations research optimization problems.",
+      "llm_tldr_cn": "针对现有LLM在运筹优化任务中仅局限于小规模简化示例的不足，提出FrontierOR基准，包含180个来自顶级运筹学期刊的实际大规模优化问题，系统评估LLM设计高效算法的能力，填补了该领域空白。",
+      "llm_tldr": "针对现有LLM在运筹优化任务中仅局限于小规模简化示例的不足，提出FrontierOR基准，包含180个来自顶级运筹学期刊的实际大规模优化问题，系统评估LLM设计高效算法的能力，填补了该领域空白。",
+      "llm_tags": [
+        "query:llm-or:composite"
+      ],
+      "matched_query_tag": "query:llm-or:composite",
+      "matched_query_text": "Papers central to 请帮助我查找有关LLM和operation research有关的文章, especially work that connects or combines: applications of large language models in operations research; operations research optimization techniques; combinatorial optimization problems solved by LLM; reinforcement learning for operations research; large language models for operations research optimization; large language model applications in combinatorial optimization and decision making.",
+      "matched_requirement_id": "req-composite-llm-or",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25658v1",
+      "source": "arxiv",
+      "title": "AutoSG: LLM-Driven Solver Generation Solely from Task Prompts for Expensive Optimization",
+      "abstract": "Expensive optimization tasks are ubiquitous in real-world applications, demanding highly specialized solvers. While LLM-driven automated solver generation shows promise, current paradigms face three critical issues when tackling expensive optimization: factual hallucinations due to deficient domain knowledge, the frequent dismantling of previously established locally optimal structures during refinement, and the prohibitive evaluation costs alongside restricted generalization caused by executing on training instances. To address these issues, we introduce AutoSG, a fully automated workflow directly translating natural language prompts into executable customized solvers. AutoSG features three core innovations: a retrieval-augmented solver generation module strictly grounding code in verified literature; a one-step self-refinement operator introducing task-specific improvements while preserving critical structural components; and an instance-free Elo-based LLM-as-a-Judge evaluation mechanism rapidly establishing global rankings. Extensive evaluations across diverse expensive optimization tasks confirm AutoSG significantly outperforms human-designed state-of-the-art frameworks and existing LLM-generated solvers.",
+      "authors": [
+        "Haoran Gu",
+        "Handing Wang",
+        "Yi Mei",
+        "Mengjie Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-25T10:04:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.25658v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "large language models for operations research optimization",
+      "llm_evidence_cn": "运筹优化中的大语言模型应用",
+      "llm_evidence": "运筹优化中的大语言模型应用",
+      "canonical_evidence": "运筹优化中的大语言模型应用",
+      "llm_tldr_en": "AutoSG uses LLMs with retrieval-augmented generation to create customized solvers from natural language prompts, addressing hallucinations and evaluation costs in expensive optimization.",
+      "llm_tldr_cn": "针对LLM驱动求解器生成中的幻觉和评估成本问题，提出AutoSG框架，通过检索增强生成技术将自然语言提示自动转化为可定制的优化求解器。在基准问题上的实验验证了其生成求解器的有效性和泛化能力，为运筹优化提供了一种新的自动化范式。",
+      "llm_tldr": "针对LLM驱动求解器生成中的幻觉和评估成本问题，提出AutoSG框架，通过检索增强生成技术将自然语言提示自动转化为可定制的优化求解器。在基准问题上的实验验证了其生成求解器的有效性和泛化能力，为运筹优化提供了一种新的自动化范式。",
+      "llm_tags": [
+        "query:llm-or"
+      ],
+      "matched_query_tag": "query:llm-or",
+      "matched_query_text": "large language models for operations research optimization",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28566v1",
+      "source": "arxiv",
+      "title": "Tree of Thoughts as a Classical Heuristic Search Problem: Formal Foundations and Design Patterns",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable reasoning capabilities, yet their standard generation process -- auto-regressive token prediction -- is inherently myopic and prone to cascading errors. To address this, the Tree-of-Thoughts (ToT) framework creates a search space over intermediate reasoning steps, allowing search models to explore, look ahead, and backtrack. However, current ToT research remains fragmented across Natural Language Processing and Automated Planning communities, often using inconsistent terminology and ad-hoc implementations. Consequently, we synthesize the ToT landscape through a unified taxonomy based on classical heuristic search terminology. We map LLM-based reasoning to classical search components: state representation (granularity of thoughts), successor generation (prompting operators), and heuristic evaluation (self-assessment of progress). We analyze existing work within the context of our taxonomy and identify emerging design patterns: systematic search (Best-First Search) for shallow, deterministic tasks and lookahead-heavy strategies (DFS, MCTS) for deep multi-step reasoning. We conclude by identifying open algorithmic challenges at the intersection of heuristic search and LLM reasoning, and call on the heuristic search community to engage with this emerging domain.",
+      "authors": [
+        "Guni Sharon"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-27T14:54:48+00:00",
+      "link": "https://arxiv.org/pdf/2605.28566v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:lh",
+        "query:llm-twin"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM reasoning formulated as heuristic search",
+      "llm_evidence_cn": "LLM推理形式化为启发式搜索",
+      "llm_evidence": "LLM推理形式化为启发式搜索",
+      "canonical_evidence": "LLM推理形式化为启发式搜索",
+      "llm_tldr_en": "Unifies Tree-of-Thoughts reasoning in LLMs under classical heuristic search terminology, providing formal foundations and design patterns for heuristic design.",
+      "llm_tldr_cn": "现有思维树（ToT）研究在NLP与自动规划社区间碎片化。本文基于经典启发式搜索术语，将LLM推理映射为搜索问题，建立统一的分类体系与设计模式。该工作为利用LLM自动设计启发式算法提供了理论基础，揭示了ToT与启发式搜索的深层联系，有助于启发式算法的自动化生成。",
+      "llm_tldr": "现有思维树（ToT）研究在NLP与自动规划社区间碎片化。本文基于经典启发式搜索术语，将LLM推理映射为搜索问题，建立统一的分类体系与设计模式。该工作为利用LLM自动设计启发式算法提供了理论基础，揭示了ToT与启发式搜索的深层联系，有助于启发式算法的自动化生成。",
+      "llm_tags": [
+        "query:lh"
+      ],
+      "matched_query_tag": "query:lh",
+      "matched_query_text": "large language model for heuristic design",
+      "matched_requirement_id": "req-44",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29649v1",
+      "source": "arxiv",
+      "title": "LLM-Evolved Domain-Independent Heuristics for Symbolic AI Planning",
+      "abstract": "Heuristic search is the dominant paradigm in symbolic AI planning, and the strongest heuristics are the result of decades of work by planning researchers. Recent work has shown that large language models (LLMs) can design heuristics for individual planning domains, but no LLM-generated heuristic has so far worked on arbitrary planning tasks. In this paper, we use evolutionary search to produce the first LLM-generated domain-independent heuristics that exceed the hand-engineered state of the art. We let an LLM mutate parent heuristics written in C++, store candidates in a MAP-Elites archive keyed on informedness and speed and calculate fitness scores by blending coverage with solving time. To place the evolved programs in context, we additionally benchmark a broad set of hand-engineered heuristics on their informedness-speed tradeoff, which to our knowledge has not been done before. On unseen testing domains, our best evolved heuristic solves more tasks than even the strongest baseline, with our full heuristic suite spanning the Pareto frontier of said tradeoff. We also find that seeding evolution from the trivial blind heuristic outperforms seeding from the strong FF heuristic, even when the resulting program is itself an FF variant, and that LLM reasoning effort affects how often candidates compile much more than the quality of those that do. Because the evolved programs are plain C++, they slot into existing planners as drop-in replacements and inherit the soundness and completeness guarantees of the underlying search.",
+      "authors": [
+        "Elliot Gestrin",
+        "Jendrik Seipp"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-28T09:14:39+00:00",
+      "link": "https://arxiv.org/pdf/2605.29649v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:evolution-rl",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM-evolved domain-independent heuristics for planning",
+      "llm_evidence_cn": "LLM进化生成领域无关的启发式规划算法",
+      "llm_evidence": "LLM进化生成领域无关的启发式规划算法",
+      "canonical_evidence": "LLM进化生成领域无关的启发式规划算法",
+      "llm_tldr_en": "First LLM-generated domain-independent heuristics that exceed hand-crafted state-of-the-art in symbolic AI planning via evolutionary search.",
+      "llm_tldr_cn": "现有LLM只能为特定规划领域设计启发式函数，无法通用。本文利用进化搜索让LLM变异父代启发式，使用MAP-Elites存档，产生了首个超越手工最优的领域无关启发式。在多个规划基准上取得了最佳结果，展示了LLM自动设计启发式的潜力。",
+      "llm_tldr": "现有LLM只能为特定规划领域设计启发式函数，无法通用。本文利用进化搜索让LLM变异父代启发式，使用MAP-Elites存档，产生了首个超越手工最优的领域无关启发式。在多个规划基准上取得了最佳结果，展示了LLM自动设计启发式的潜力。",
+      "llm_tags": [
+        "query:lh:composite"
+      ],
+      "matched_query_tag": "query:lh:composite",
+      "matched_query_text": "Papers central to 帮助我查找大语言模型自动设计启发式算法的论文, especially work that connects or combines: large language model for heuristic design; automatic design of heuristics using deep learning; generation of heuristic algorithms by neural networks; automated search for heuristics using reinforcement learning; automatic generation of heuristic algorithms using large language models; large language model designed heuristic for combinatorial optimization.",
+      "matched_requirement_id": "req-composite-lh",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29687v1",
+      "source": "arxiv",
+      "title": "Reliable Reasoning with Large Language Models via Preference-Based Maximum Satisfiability",
+      "abstract": "Large Language Models (LLMs) excel at understanding natural language but struggle with optimisation tasks involving multiple constraints and user-defined preferences, which commonly arise in domains such as robotics. We propose a hybrid reasoning approach in which LLMs externalise reasoning through code generation. Given a natural language problem description, an LLM generates Python code that encodes user-defined constraints and preferences as a preference-based Maximum Satisfiability (MaxSAT) problem, which is then solved by an exact MaxSAT solver. To ensure correctness, solutions returned by the model-generated code are independently verified for feasibility and optimality against a canonical MaxSAT encoding, allowing for different encodings and multiple optimal solutions. We evaluate our approach using both open-source and closed-access LLMs on three families of preference-based reasoning tasks, and compare it against direct-answer, chain-of-thought, and program-of-thought baselines using the same models. While these baselines rarely produce feasible solutions, the MaxSAT-based pipeline achieves substantially higher acceptance rates, in some cases exceeding 80%. Our results demonstrate that LLM-driven code generation combined with preference-based MaxSAT enables solver-verifiable optimisation with respect to generated encodings, and substantially improves correctness under independently verified reference semantics.",
+      "authors": [
+        "Pedro Orvalho",
+        "Marta Kwiatkowska",
+        "Guillem Alenyà",
+        "Felip Manyà"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LO"
+      ],
+      "published": "2026-05-28T09:51:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.29687v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:lh",
+        "query:llm-twin"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM solves combinatorial optimization via MaxSAT encoding",
+      "llm_evidence_cn": "LLM通过MaxSAT编码求解组合优化问题",
+      "llm_evidence": "LLM通过MaxSAT编码求解组合优化问题",
+      "canonical_evidence": "LLM通过MaxSAT编码求解组合优化问题",
+      "llm_tldr_en": "Proposes a hybrid approach where LLM generates MaxSAT code from natural language, solving constrained optimization problems with verification.",
+      "llm_tldr_cn": "现有LLM在处理多约束优化问题时表现不佳。本文提出混合方法，让LLM根据自然语言描述生成偏好MaxSAT的Python代码，再由精确求解器求解。通过独立验证保证解的可行性和最优性。该方法将LLM的语言理解与精确优化结合，适用于机器人等领域的约束优化任务。",
+      "llm_tldr": "现有LLM在处理多约束优化问题时表现不佳。本文提出混合方法，让LLM根据自然语言描述生成偏好MaxSAT的Python代码，再由精确求解器求解。通过独立验证保证解的可行性和最优性。该方法将LLM的语言理解与精确优化结合，适用于机器人等领域的约束优化任务。",
+      "llm_tags": [
+        "query:llm-or"
+      ],
+      "matched_query_tag": "query:llm-or",
+      "matched_query_text": "combinatorial optimization problems solved by LLM",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29782v1",
+      "source": "arxiv",
+      "title": "Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning",
+      "abstract": "Reinforcement learning (RL) refines large language models (LLMs) by directly optimizing model behavior through reward signals. While accurate state value estimation is critical for stable training in classical RL, it remains an underexplored challenge in LLM post-training. In this work, we introduce the State Value Estimation Benchmark (SVEB) to assess state estimation within existing RL frameworks and show that critics in standard approaches like PPO collapse to a coarse group-average baseline. To address this, we propose two techniques: Numca, which leverages numerical spans as gradable milestones for state value estimation, and Hista, a framework that uses LLM's hidden states as representation to weighted average disjoint rollouts and their return. Extensive experiments demonstrate that both methods yield more accurate state value estimates and enhance training performance across different RL algorithms and model sizes without incurring significant computational overhead.",
+      "authors": [
+        "Zizhe Chen",
+        "Jiqian Dong",
+        "Yizhou Tian",
+        "Garry Yang",
+        "Yongqiang Chen",
+        "Zhitang Chen",
+        "James Cheng"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-28T11:31:13+00:00",
+      "link": "https://arxiv.org/pdf/2605.29782v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:evolution-rl"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "state value estimation for LLM reinforcement learning",
+      "llm_evidence_cn": "为大语言模型强化学习进行状态价值估计",
+      "llm_evidence": "为大语言模型强化学习进行状态价值估计",
+      "canonical_evidence": "为大语言模型强化学习进行状态价值估计",
+      "llm_tldr_en": "This paper introduces SVEB to assess state value estimation in LLM RL, and proposes Numca and Hista to improve state value estimation by leveraging numerical spans and hidden state representations.",
+      "llm_tldr_cn": "针对大语言模型强化学习中状态价值估计被忽视的问题，本文构建SVEB基准，发现现有方法如PPO的评论家网络退化为粗粒度的组平均基线。为此提出Numca，利用数值跨度作为渐近里程碑进行价值估计；以及Hista，利用LLM隐藏状态加权平均多条轨迹。实验表明这些方法改进了状态价值估计，稳定了RL训练。",
+      "llm_tldr": "针对大语言模型强化学习中状态价值估计被忽视的问题，本文构建SVEB基准，发现现有方法如PPO的评论家网络退化为粗粒度的组平均基线。为此提出Numca，利用数值跨度作为渐近里程碑进行价值估计；以及Hista，利用LLM隐藏状态加权平均多条轨迹。实验表明这些方法改进了状态价值估计，稳定了RL训练。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model assists reinforcement learning state representation",
+      "matched_requirement_id": "req-14",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.29847v1",
+      "source": "arxiv",
+      "title": "EvoRubric: Self-Evolving Rubric-Driven RL for Open-Ended Generation",
+      "abstract": "Reinforcement Learning (RL) has significantly advanced Large Language Models (LLMs) in verifiable domains, but aligning models for open-ended generation remains profoundly challenging due to the lack of definitive rewards. Current rubric-based RL methods mitigate this by employing explicit criteria; however, they rely heavily on static, human-annotated rubrics that inevitably cause policy lag, or expensive external proprietary models for dynamic updates. In this paper, we propose EvoRubric, a novel single-policy co-evolutionary RL framework that eliminates the reliance on static criteria and on external rubric generators. By unifying response generation and rubric generation under a single parameterized policy, EvoRubric dynamically alternates between a Reasoner and a Rubric Generator. To prevent reward hacking and ensure the reliability of generated signals, we introduce a multi-level verification pipeline featuring a meta-verifier, zero-variance pruning, and a Leave-One-Out peer consensus mechanism. Validated criteria are dynamically archived into a memory pool, yielding dense, multi-objective rewards to continuously co-optimize both roles. Extensive experiments across Medical, Writing, and Science domains demonstrate that EvoRubric consistently outperforms traditional static and external-LLM-driven alignment methods. Notably, our framework is compatible with human-expert priors. When initialized with expert-annotated rubrics, EvoRubric can further uncover novel, discriminative dimensions, achieving better performance than relying solely on static expert annotations.",
+      "authors": [
+        "Xin Guan",
+        "Xiaomeng Hu",
+        "Shen Huang",
+        "Zhenyi Wang",
+        "Bo Zhang",
+        "Zijian Li",
+        "Pengjun Xie",
+        "Bo Liu",
+        "Jiuxin Cao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-05-28T12:28:49+00:00",
+      "link": "https://arxiv.org/pdf/2605.29847v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-twin",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:lh"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Co-evolutionary RL framework for LLM alignment with self-evolving rubrics",
+      "llm_evidence_cn": "用于大语言模型对齐的共进化强化学习框架，包含自进化评价标准",
+      "llm_evidence": "用于大语言模型对齐的共进化强化学习框架，包含自进化评价标准",
+      "canonical_evidence": "用于大语言模型对齐的共进化强化学习框架，包含自进化评价标准",
+      "llm_tldr_en": "Proposes EvoRubric, a single-policy co-evolutionary RL framework where response and rubric generation co-adapt, eliminating static criteria.",
+      "llm_tldr_cn": "本文针对开放生成任务中强化学习奖励缺失问题，提出EvoRubric单策略共进化强化学习框架。将回答生成和评价标准生成统一在同一策略下，通过交替进化避免静态评价标准导致的策略滞后。实验证明EvoRubric在多种开放任务上持续自我提升，无需外部模型或人工标注。",
+      "llm_tldr": "本文针对开放生成任务中强化学习奖励缺失问题，提出EvoRubric单策略共进化强化学习框架。将回答生成和评价标准生成统一在同一策略下，通过交替进化避免静态评价标准导致的策略滞后。实验证明EvoRubric在多种开放任务上持续自我提升，无需外部模型或人工标注。",
+      "llm_tags": [
+        "query:evolution-rl:composite"
+      ],
+      "matched_query_tag": "query:evolution-rl:composite",
+      "matched_query_text": "Papers central to 帮助我查找有关进化强化学习的论文, especially work that connects or combines: evolutionary reinforcement learning methods and techniques; evolutionary algorithms for reinforcement learning; genetic algorithms applied to reinforcement learning; neuroevolution for reinforcement learning tasks; evolution strategies in reinforcement learning; coevolutionary approaches to reinforcement learning; evolutionary reinforcement learning papers; applications of evolutionary algorithms in reinforcement learning; neuroevolution for deep reinforcement learning.",
+      "matched_requirement_id": "req-composite-evolution-rl",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30323v1",
+      "source": "arxiv",
+      "title": "In-Context Reward Adaptation for Robust Preference Modeling",
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) typically relies on static reward models to align Large Language Models with human preferences. However, human values are inherently diverse and heterogeneous, and a single reward model often lacks the robustness required to generalize to unseen preference domains. While existing multi-reward frameworks attempt to address this, they are often restricted to a fixed set of known domains and fail to adapt to unseen human distributions without costly retraining. In this work, we propose In-Context Reward Adaptation, a transformer-based framework designed to model diverse and unseen human preferences on the fly. By leveraging the in-context learning capabilities of transformers, our approach adaptively infers the underlying reward structure from a small set of preference demonstrations. We demonstrate that while a standard transformer architecture is insufficient for this task by characterizing an asymptotic bias to the ground-truth, incorporating human response time as an auxiliary input signal enables the model to successfully adapt to preferences from previously unseen domains. Our findings show that this approach provides a more robust foundation for preference modeling, allowing for the representation of heterogeneous rewards and preference distribution shift, and offering a scalable path toward more flexible human-AI alignment.",
+      "authors": [
+        "Zhenyu Sun",
+        "Zheng Xu",
+        "Ermin Wei"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-28T17:56:54+00:00",
+      "link": "https://arxiv.org/pdf/2605.30323v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:evolution-rl"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM used for reward function adaptation in RLHF",
+      "llm_evidence_cn": "LLM用于RLHF中的奖励函数适应",
+      "llm_evidence": "LLM用于RLHF中的奖励函数适应",
+      "canonical_evidence": "LLM用于RLHF中的奖励函数适应",
+      "llm_tldr_en": "Proposes In-Context Reward Adaptation, a transformer framework that dynamically adapts reward models to unseen human preferences without retraining.",
+      "llm_tldr_cn": "静态奖励模型难以泛化到未见过的偏好领域。本文提出上下文奖励适应框架，利用Transformer的上下文学习能力，根据输入动态调整奖励模型。该方法无需重新训练即可适应新的偏好分布。实验表明其在偏好鲁棒性上显著优于现有多奖励方法，有助于RLHF更好地对齐多样的人类价值观。",
+      "llm_tldr": "静态奖励模型难以泛化到未见过的偏好领域。本文提出上下文奖励适应框架，利用Transformer的上下文学习能力，根据输入动态调整奖励模型。该方法无需重新训练即可适应新的偏好分布。实验表明其在偏好鲁棒性上显著优于现有多奖励方法，有助于RLHF更好地对齐多样的人类价值观。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model for reinforcement learning reward function design",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30719v1",
+      "source": "arxiv",
+      "title": "When are LLMs Sufficient Policy Optimizers for Sequential RL Tasks?",
+      "abstract": "We study when large language models (LLMs) can serve as effective black-box policy optimizers for reinforcement learning (RL) tasks, i.e., when can we replace classical RL algorithms with an LLM? We explore this question by introducing Prompted Policy Optimization (PromptPO), an iterative method that prompts an LLM with Python descriptions of the state space, action space, and reward function, then has it generate and refine executable policies based on rollout feedback. Across hard exploration environments, Meta-World robotics tasks, and several real-world control problems, PromptPO often matches or exceeds the performance of standard RL baselines while using substantially fewer environment interactions. To maximize expected return, and without further explicit prompting, the policies PromptPO outputs range from tuned proportional controllers or rule-based plans to policies that run planning algorithms like value iteration. Our results demonstrate that LLM-based policy optimization is sufficient when the LLM can leverage prior knowledge about the environment or optimization strategy. PromptPO underperforms standard RL baselines in MuJoCo domains. This demonstrates possible limitations of LLM-based policy optimization to settings that requiring fine-grained continuous control.",
+      "authors": [
+        "Stephane Hatgis-Kessell",
+        "Emma Brunskill"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-29T01:24:24+00:00",
+      "link": "https://arxiv.org/pdf/2605.30719v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:evolution-rl",
+        "query:llm-planning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM as policy optimizer for RL tasks",
+      "llm_evidence_cn": "大语言模型作为强化学习策略优化器",
+      "llm_evidence": "大语言模型作为强化学习策略优化器",
+      "canonical_evidence": "大语言模型作为强化学习策略优化器",
+      "llm_tldr_en": "Introduces PromptPO, a method that uses LLMs as black-box policy optimizers for sequential RL tasks, surpassing standard baselines.",
+      "llm_tldr_cn": "针对大语言模型能否替代经典强化学习算法作为策略优化器的问题，提出了PromptPO方法。该方法通过向LLM提供状态空间、动作空间和奖励函数的Python描述，基于展开反馈迭代生成并优化可执行策略。在困难探索环境和机器人控制等任务中，PromptPO以更少交互次数达到或超过标准RL基线性能。",
+      "llm_tldr": "针对大语言模型能否替代经典强化学习算法作为策略优化器的问题，提出了PromptPO方法。该方法通过向LLM提供状态空间、动作空间和奖励函数的Python描述，基于展开反馈迭代生成并优化可执行策略。在困难探索环境和机器人控制等任务中，PromptPO以更少交互次数达到或超过标准RL基线性能。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "policy design by large language model",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.30795v1",
+      "source": "arxiv",
+      "title": "Feat2Go: Visual Feature-Grounded Value Estimation for Embodied Reinforcement Learning",
+      "abstract": "Reinforcement learning is a promising approach for improving the capabilities of vision-language-action (VLA) models while avoiding the heavy data requirements of imitation learning. However, its effectiveness for VLA models is often constrained by sparse supervision and the difficulty of designing informative reward signals for long-horizon manipulation. In this work, we present Feat2Go, a fine-grained value estimation framework for embodied reinforcement learning. Specifically, Feat2Go first derives a continuous progress target from a pretrained visual world model by measuring patch-level similarity to subgoal states and partitioning episodes into semantic stages with trend-based clustering. We then train an embodied value model to predict this structural progress from the current observation and task instruction, and use the predicted value to reshape terminal rewards during policy optimization. The proposed framework is compatible with existing VLA policy reinforcement learning pipelines, including PPO and GRPO, and does not rely on manual reward engineering. Extensive experiments on ManiSkill3 and RoboTwin 2.0 demonstrate that Feat2Go consistently improves the performance of existing VLA models under both single-arm and bimanual manipulation settings. More specifically, on ManiSkill3, Feat2Go improves OpenVLAOFT from 17.5% to 82.9% average out-of-distribution success while retaining 96.9% in-distribution performance. On RoboTwin 2.0, Feat2Go achieves an average success rate of 88.8% in domain-randomized task settings, outperforming prior reinforcement learning methods.",
+      "authors": [
+        "Junyang Shu",
+        "Zhiwei Lin",
+        "Bingqing Wei",
+        "Yongtao Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-29T03:36:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.30795v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:evolution-rl"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Visual feature-grounded value estimation for embodied RL",
+      "llm_evidence_cn": "基于视觉特征的身体化强化学习价值估计",
+      "llm_evidence": "基于视觉特征的身体化强化学习价值估计",
+      "canonical_evidence": "基于视觉特征的身体化强化学习价值估计",
+      "llm_tldr_en": "Feat2Go introduces fine-grained value estimation for embodied RL using visual feature similarity to subgoal states.",
+      "llm_tldr_cn": "该论文提出Feat2Go框架，通过测量视觉世界模型中的补丁级相似度来获得连续进度目标，为身体化强化学习提供细粒度价值估计，解决了长时操作中奖励信号稀疏的问题。",
+      "llm_tldr": "该论文提出Feat2Go框架，通过测量视觉世界模型中的补丁级相似度来获得连续进度目标，为身体化强化学习提供细粒度价值估计，解决了长时操作中奖励信号稀疏的问题。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.31049v1",
+      "source": "arxiv",
+      "title": "Learning to Solve and Optimize by Evolving Code",
+      "abstract": "Combinatorial and optimization problems are fundamental to many industrial AI applications. Solving large-scale real-world instances of such problems typically requires careful problem formalization, specialized solvers, and expert-designed heuristics. Thus, experts need to specify not only what solutions are, but also how they are derived. By introducing the tool CHECKMATE, we show that algorithm generation via code evolution represents a paradigm shift by eliminating the need to formulate the how. CHECKMATE solely relies on the what. Specifically, a formal specification ensures solutions' correctness and enables systematic performance evaluation of the generated programs, while a natural language description guides the evolutionary process. The effectiveness of our method is demonstrated on selected problems from two industrial domains: configuration and scheduling. In all cases, the evolved algorithms consistently outperform state-of-the-art solvers. This underscores the potential of formal methods in guiding code evolution for automatically solving complex real-world problems.",
+      "authors": [
+        "Veronika Semmelrock",
+        "Benedetta Strizzolo",
+        "Francesco Zuccato",
+        "Gerhard Friedrich",
+        "Patrick Rodler",
+        "Konstantin Schekotihin"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.LO"
+      ],
+      "published": "2026-05-29T09:25:07+00:00",
+      "link": "https://arxiv.org/pdf/2605.31049v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:evolution-rl",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "uses code evolution guided by LLM for combinatorial optimization",
+      "llm_evidence_cn": "利用自然语言引导的代码进化解决组合优化问题",
+      "llm_evidence": "利用自然语言引导的代码进化解决组合优化问题",
+      "canonical_evidence": "利用自然语言引导的代码进化解决组合优化问题",
+      "llm_tldr_en": "This paper introduces CHECKMATE, a tool that evolves code to solve combinatorial optimization problems by using a formal specification and natural language description to guide the evolutionary process, eliminating the need for expert-designed heuristics.",
+      "llm_tldr_cn": "本文针对组合优化问题需要专家精心设计启发式算法的局限性，提出CHECKMATE工具，通过代码进化自动生成求解算法。该方法仅需形式规约保证正确性，并利用自然语言描述指导进化方向。实验表明CHECKMATE能有效生成高效算法，为自动启发式设计提供了新范式。",
+      "llm_tldr": "本文针对组合优化问题需要专家精心设计启发式算法的局限性，提出CHECKMATE工具，通过代码进化自动生成求解算法。该方法仅需形式规约保证正确性，并利用自然语言描述指导进化方向。实验表明CHECKMATE能有效生成高效算法，为自动启发式设计提供了新范式。",
+      "llm_tags": [
+        "query:lh"
+      ],
+      "matched_query_tag": "query:lh",
+      "matched_query_text": "large language model designed heuristic for combinatorial optimization",
+      "matched_requirement_id": "req-49",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.31444v1",
+      "source": "arxiv",
+      "title": "Answer-Set-Programming-based Abstractions for Reinforcement Learning",
+      "abstract": "Reinforcement Learning (RL) enables autonomous agents to learn policies from experience, but realistic problems often involve enormous state spaces, making learning and generalisation challenging. Abstraction and approximation are therefore essential. Relational Reinforcement Learning (RRL) offers a way to reason about objects and their relations, and the CARCASS framework by Martijn van Otterlo demonstrates how logical representations can model Markov Decision Processes (MDPs) in first-order domains. Originally implemented in Prolog, CARCASS leverages domain knowledge to create powerful abstractions. We explore Answer-Set Programming (ASP), which is a rich and, contrary to Prolog, fully declarative modelling language, to realise CARCASS abstractions. We evaluate our ASP-based implementation in case studies of two domains, viz. Blocks World and Minigrid. Our results indicate that CARCASS with ASP provides a promising approach to constructing abstractions for RL, especially when domain knowledge is available.",
+      "authors": [
+        "Rafael Bankosegger",
+        "Thomas Eiter",
+        "Johannes Oetsch"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LO"
+      ],
+      "published": "2026-05-29T15:40:10+00:00",
+      "link": "https://arxiv.org/pdf/2605.31444v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:lh"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "ASP abstractions for RL",
+      "llm_evidence_cn": "基于ASP的RL抽象方法",
+      "llm_evidence": "基于ASP的RL抽象方法",
+      "canonical_evidence": "基于ASP的RL抽象方法",
+      "llm_tldr_en": "This paper uses Answer-Set Programming to create abstractions for reinforcement learning, improving state representation.",
+      "llm_tldr_cn": "该论文利用回答集编程（ASP）为强化学习创建抽象表示，以应对大规模状态空间挑战。通过ASP的声明式建模实现CARCASS框架，有效提升学习效率。",
+      "llm_tldr": "该论文利用回答集编程（ASP）为强化学习创建抽象表示，以应对大规模状态空间挑战。通过ASP的声明式建模实现CARCASS框架，有效提升学习效率。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.24812v1",
+      "source": "arxiv",
+      "title": "CoRe-Code: Collaborative Reinforcement Learning for Code Generation",
+      "abstract": "Large language models (LLMs) have achieved strong performance in code generation, but most methods rely on autoregressive decoding without global planning, often leading to locally coherent yet globally suboptimal solutions (e.g., failing test cases or inefficient complexity). While recent approaches such as Chain-of-Thought (CoT) and multi-agent systems (MAS) introduce planning, their limited role specialization and coordination hinder performance on complex tasks. To address the challenges of coordination and specialization in multi-agent code generation, we propose Collaborative Reinforcement Code (CoRe-Code), a framework for role specialized LLM agents that enhances inter-agent coordination to generate more accurate and efficient code. CoRe-Code adopts a simple Planner-Coder paradigm, where the Planner produces high-level plans and the Coder executes them to generate code. We further introduce a collaboration-aware reinforcement learning stage based on Group Relative Policy Optimization (GRPO) to enhance role specialization and alignment. Experiments show that CoRe-Code outperforms a wide range of existing RL-based and multi-agent methods. In addition, we demonstrate that CoRe-Code can generalize to other multi-agent frameworks (e.g., Retrieval and Debugging agents), highlighting its flexibility and scalability. We evaluate CoRe-Code on multiple benchmarks of varying difficulty using three base models. Compared to existing baselines, the results show consistent improvements in accuracy, while also achieving higher efficiency in terms of execution time and memory usage, demonstrating the effectiveness and practicality of CoRe-Code.",
+      "authors": [
+        "Zhihao Dou",
+        "Qinjian Zhao",
+        "Zhongwei Wan",
+        "Xiaoyu Xia",
+        "Sumon Biswas"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-24T01:47:30+00:00",
+      "link": "https://arxiv.org/pdf/2605.24812v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "collaborative RL for code generation using LLM agents",
+      "llm_evidence_cn": "基于LLM智能体的协作强化学习代码生成",
+      "llm_evidence": "基于LLM智能体的协作强化学习代码生成",
+      "canonical_evidence": "基于LLM智能体的协作强化学习代码生成",
+      "llm_tldr_en": "CoRe-Code uses collaborative reinforcement learning with role-specialized LLM agents to enhance inter-agent coordination for code generation, improving test case pass rates and code efficiency.",
+      "llm_tldr_cn": "代码生成中，多智能体系统因角色分工和协调不足而性能受限。本文提出CoRe-Code框架，采用协作强化学习训练角色专门化的LLM智能体，增强智能体间的协调以生成更准确和高效的代码。该框架在多个编程任务上提升了通过率和代码质量，展示了协作强化学习在复杂代码生成中的潜力。",
+      "llm_tldr": "代码生成中，多智能体系统因角色分工和协调不足而性能受限。本文提出CoRe-Code框架，采用协作强化学习训练角色专门化的LLM智能体，增强智能体间的协调以生成更准确和高效的代码。该框架在多个编程任务上提升了通过率和代码质量，展示了协作强化学习在复杂代码生成中的潜力。",
+      "llm_tags": [
+        "query:llm-rl:composite"
+      ],
+      "matched_query_tag": "query:llm-rl:composite",
+      "matched_query_text": "Papers central to 查找有关LLM增强强化学习的文章，例如LLM帮助设计RL的状态、奖励函数、动作等, especially work that connects or combines: large language model; reinforcement learning; reward function design using large language model; state representation with language model; action space design with large language model; policy design by large language model; large language model for reinforcement learning reward function design; large language model assists reinforcement learning state representation; action space design using large language model in reinforcement learning.",
+      "matched_requirement_id": "req-composite-llm-rl",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.24823v1",
+      "source": "arxiv",
+      "title": "Agent Manufacturing: Foundation-Model Agents as First-Class Industrial Entities",
+      "abstract": "Manufacturing has passed through four widely recognized paradigms - mechanization, electrification, programmable automation, and Smart Manufacturing - each defined by the kind of work it shifted from humans to machines. In every case, one layer of industrial work remained fundamentally human: the coordinative cognition of production, comprising the interpretive, allocative, diagnostic, negotiative, and governance work exercised by engineers, planners, and operational managers. We argue that a fifth transition is now underway in which this layer, rather than the physical or routine-cognitive layers below it, is what foundation-model-based autonomous agents primarily redistribute. We name this paradigm Agent Manufacturing and define it operationally: a manufacturing system is an instance of Agent Manufacturing when its principal coordination mechanism is reasoning performed by foundation-model agents that can interpret open-ended goals, plan over long horizons, invoke tools and machines, and negotiate with other agents and humans. This is a narrower and more falsifiable definition than the existing literature on cognitive manufacturing or Industry 5.0 provides, and it distinguishes the paradigm sharply from classical multi-agent manufacturing systems, which were autonomous only within closed protocol spaces.",
+      "authors": [
+        "Yilei Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-24T02:27:44+00:00",
+      "link": "https://arxiv.org/pdf/2605.24823v1",
+      "tags": [
+        "keyword:LLM-manufact",
+        "keyword:llm-planning",
+        "query:LLM-manufact",
+        "query:llm-planning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "foundation-model agents in manufacturing paradigm",
+      "llm_evidence_cn": "制造业中的基础模型代理范式",
+      "llm_evidence": "制造业中的基础模型代理范式",
+      "canonical_evidence": "制造业中的基础模型代理范式",
+      "llm_tldr_en": "Proposes Agent Manufacturing paradigm where foundation-model agents handle coordinative cognition tasks in production, shifting human work to higher levels.",
+      "llm_tldr_cn": "提出“代理制造”新范式，认为基础模型自主代理正在接管生产中的协调认知工作（解释、分配、诊断、协商和治理），从而推动第五次制造范式转变。该文从概念上定义了代理制造，并讨论了其操作化含义，为LLM在制造业中的应用提供了宏观框架。",
+      "llm_tldr": "提出“代理制造”新范式，认为基础模型自主代理正在接管生产中的协调认知工作（解释、分配、诊断、协商和治理），从而推动第五次制造范式转变。该文从概念上定义了代理制造，并讨论了其操作化含义，为LLM在制造业中的应用提供了宏观框架。",
+      "llm_tags": [
+        "query:llm-manufact:composite"
+      ],
+      "matched_query_tag": "query:llm-manufact:composite",
+      "matched_query_text": "Papers central to 帮助查找关于大型语言模型（LLM）在制造业中应用的论文, especially work that connects or combines: large language model; manufacturing industry; industrial automation; smart manufacturing; production optimization; how are large language models used in manufacturing; LLM applications in industrial automation; role of generative AI in smart manufacturing.",
+      "matched_requirement_id": "req-composite-llm-manufact",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.24799v1",
+      "source": "arxiv",
+      "title": "Divide-and-Conquer Inference for Large-Scale Visual Recognition with Multimodal Large Language Models",
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated strong capabilities across a wide range of vision language tasks. However, when applied to large scale image classification, their performance degrades significantly as the label space expands a phenomenon we define as Performance Collapse in Long Sequence Recognition. Through an information theoretic analysis, we reveal that this collapse stems from a fundamental conflict between the escalating information entropy and the prominent attention dilution and decay within attention mechanisms, which impairs the model's ability to maintain a sufficient signal-to-noise ratio when processing extremely long prompts. To mitigate this, we propose Divide-and-Conquer Inference (DCI), a novel test-time scaling strategy for visual recognition with MLLMs. DCI recursively decomposes complex global classification tasks into multiple simpler, localized subproblems and employs a dynamic pruning mechanism to compress the search space. This method effectively improves the local signal to noise ratio and model accuracy by mitigating the inherent weight dilution issues in long-sequence inference. Moreover, while traditional self-attention incurs a prohibitive quadratic computational complexity, DCI achieves more favorable scaling behavior and substantially accelerates inference in large scale classification scenarios. Extensive experiments on benchmarks such as ImageNet-1K and ImageNet-21K demonstrate that DCI consistently improves classification accuracy. This enables lightweight open-source models to rival or even surpass frontier closed-source giants without any additional training or fine-tuning. As a model-agnostic, plug-and-play paradigm, DCI offers an efficient approach for scaling the inferential precision of MLLMs in large-scale scenarios.",
+      "authors": [
+        "Zhipeng Ye",
+        "Jiaqi Huang",
+        "Feng Jiang",
+        "Qiufeng Wang",
+        "Yikang Duan",
+        "Dawei Wang",
+        "Xihang Zhou",
+        "Qian Qiao"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-24T01:07:05+00:00",
+      "link": "https://arxiv.org/pdf/2605.24799v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-twin",
+        "query:llm-twin"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Divide-and-conquer inference for MLLMs in visual recognition",
+      "llm_evidence_cn": "多模态LLM在视觉识别中的分治推理",
+      "llm_evidence": "多模态LLM在视觉识别中的分治推理",
+      "canonical_evidence": "多模态LLM在视觉识别中的分治推理",
+      "llm_tldr_en": "Analysis of performance collapse in MLLMs for large-scale classification and proposal of divide-and-conquer inference.",
+      "llm_tldr_cn": "该论文分析多模态大语言模型在大规模图像分类中的性能退化现象，提出分治推理策略，将长序列拆解为子问题来解决信息熵与注意力稀释冲突。",
+      "llm_tldr": "该论文分析多模态大语言模型在大规模图像分类中的性能退化现象，提出分治推理策略，将长序列拆解为子问题来解决信息熵与注意力稀释冲突。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.24862v1",
+      "source": "arxiv",
+      "title": "Unifying Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning with Heterogeneous Datasets",
+      "abstract": "Cross-domain offline reinforcement learning (RL) aims to learn a policy in the target domain with a limited target domain dataset and a source domain dataset that exhibits a dynamics shift. Training directly on the original source dataset typically leads to performance collapse. Recent studies perform data filtering from the perspective of dynamics alignment or value alignment to enable efficient policy transfer. However, these studies are typically validated on single-domain or single-behavior-policy source datasets. In this work, we explore a more general heterogeneous cross-domain offline RL setting, where the source datasets may be collected from multiple source domains by diverse behavior policies. We first uncover a critical yet overlooked issue in this setting: value misassignment. Empirically and theoretically, we demonstrate that value misassignment can undermine value alignment, mislead data filtering toward selecting suboptimal samples, and loosen the suboptimality gap, thereby degrading the agent's performance. To address this issue, we propose V2A, which integrates dynamics alignment, value alignment, and value assignment. V2A first employs temporally-consistent modality representation learning to extract dynamics modalities from the source dataset, followed by modality-aware advantage learning to rectify value alignment. Finally, it adopts a data filtering paradigm to selectively share source data for policy learning. Empirical results show that V2A significantly outperforms strong baseline methods under general heterogeneous cross-domain offline RL settings.",
+      "authors": [
+        "Zhongjian Qiao",
+        "Jiafei Lyu",
+        "Chenjia Bai",
+        "Peisong Wang",
+        "Siyang Gao",
+        "Shuang Qiu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-24T04:44:44+00:00",
+      "link": "https://arxiv.org/pdf/2605.24862v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-RL",
+        "query:evolution-rl"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "cross-domain offline RL with heterogeneous datasets",
+      "llm_evidence_cn": "跨领域离线强化学习与异构数据集",
+      "llm_evidence": "跨领域离线强化学习与异构数据集",
+      "canonical_evidence": "跨领域离线强化学习与异构数据集",
+      "llm_tldr_en": "Proposes a framework unifying value alignment and assignment for cross-domain offline RL, enabling efficient policy transfer from heterogeneous source datasets.",
+      "llm_tldr_cn": "针对跨领域离线强化学习中源数据集异构且动力学偏移的问题，提出一种统一价值对齐与分配的方法，通过数据过滤与策略迁移，在多个源域和行为策略下实现高效策略学习，实验表明该方法在复杂异构场景下显著优于现有基线。",
+      "llm_tldr": "针对跨领域离线强化学习中源数据集异构且动力学偏移的问题，提出一种统一价值对齐与分配的方法，通过数据过滤与策略迁移，在多个源域和行为策略下实现高效策略学习，实验表明该方法在复杂异构场景下显著优于现有基线。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.25029v2",
+      "source": "arxiv",
+      "title": "ParkingWorld: End-to-End Autonomous Parking Reinforcement Learning from Corrective Experience in 3DGS Simulation",
+      "abstract": "Autonomous parking demands precise low-speed maneuvering within narrow, cluttered, and highly constrained environments, where vehicles must navigate tight spaces while avoiding static obstacles and complex geometric boundaries. Unlike imitation learning, which typically requires massive volumes of high-quality expert demonstrations to converge to a stable policy and often suffers from limited generalization to unseen scenarios, traditional reinforcement learning (RL) methods face persistent challenges including excessive training overhead, inefficient exploration, and even failure to learn viable parking strategies in challenging settings. To address these limitations, this paper presents a correction-in-the-loop sample-efficient reinforcement learning (CIL-SERL) framework for end-to-end autonomous parking, which is entirely trained in a photorealistic 3D Gaussian Splatting (3DGS) parking simulator that enables high-fidelity digital reconstruction of real-world scenes. Inspired by error-correction notebooks used in learning practice, we design a novel multi-level replay buffer mechanism. These buffers hierarchically organize and store standard RL rollouts, human corrective interventions, failed exploration trajectories, and rollback-based correction segments in separate yet interconnected memory regions, facilitating structured sampling and targeted learning during training. The proposed framework is systematically evaluated in both the 3DGS simulation environment and a physical vehicle platform. Extensive experimental results demonstrate that our method achieves substantial improvements in parking success rate, operational efficiency, and safety performance across diverse scenarios, validating the effectiveness and practical applicability of the proposed CIL-SERL-based end-to-end autonomous parking solution.",
+      "authors": [
+        "Zhengcheng Yu",
+        "Changze Li",
+        "Haoran Liu",
+        "Tong Qin"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-24T12:09:53+00:00",
+      "link": "https://arxiv.org/pdf/2605.25029v2",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "RL for autonomous parking in simulation",
+      "llm_evidence_cn": "模拟环境下自主泊车的强化学习",
+      "llm_evidence": "模拟环境下自主泊车的强化学习",
+      "canonical_evidence": "模拟环境下自主泊车的强化学习",
+      "llm_tldr_en": "ParkingWorld uses reinforcement learning with corrective experience in 3DGS simulation to learn end-to-end autonomous parking policies, addressing exploration and training efficiency.",
+      "llm_tldr_cn": "自主泊车需要在狭窄环境中精确操控，传统强化学习存在训练开销大、探索效率低等问题。本文提出ParkingWorld，在3DGS仿真中利用矫正经验进行端到端强化学习，通过引入人机环内的矫正信号降低训练成本并提升策略泛化能力。实验表明该方法在复杂泊车场景中能学习到有效的策略。",
+      "llm_tldr": "自主泊车需要在狭窄环境中精确操控，传统强化学习存在训练开销大、探索效率低等问题。本文提出ParkingWorld，在3DGS仿真中利用矫正经验进行端到端强化学习，通过引入人机环内的矫正信号降低训练成本并提升策略泛化能力。实验表明该方法在复杂泊车场景中能学习到有效的策略。",
+      "llm_tags": [
+        "query:llm-or"
+      ],
+      "matched_query_tag": "query:llm-or",
+      "matched_query_text": "reinforcement learning for operations research",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.24931v1",
+      "source": "arxiv",
+      "title": "Learning High-Frequency Continuous Action Chunks in Latent Space",
+      "abstract": "Modern robotic policies increasingly rely on action chunking to execute complex tasks in the physical world. While action chunking improves temporal consistency at moderate action frequencies, it becomes insufficient when the action frequency is further increased (e.g., to 60~Hz). At such high frequencies, policies often fail to generate actions that are both temporally smooth and spatially consistent. We address this challenge by shifting high-frequency action learning from the action space to a latent space with variational autoencoder (VAE). This formulation significantly improves both temporal and spatial consistency of high-frequency control. To enable smooth real-time execution, we further introduce Reuse-then-Refine, a chunk-level refine strategy that improves continuity between adjacent action chunks under asynchronous inference. As a result, robots controlled by our policy can execute complex contact-rich tasks continuously, with less pauses and jerky motions. Experiments on three real-world contact-rich robotic tasks show that our approach consistently completes tasks with smooth motions. Our code and data are available at https://github.com/tars-robotics/RTR.",
+      "authors": [
+        "Kunyun Wang",
+        "Yuhang Zheng",
+        "Yupeng Zheng",
+        "Jieru Zhao",
+        "Wenchao Ding"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-24T08:22:14+00:00",
+      "link": "https://arxiv.org/pdf/2605.24931v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:evolution-rl"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "high-frequency continuous action chunks in latent space for robotic policies",
+      "llm_evidence_cn": "潜在空间中的高频动作块用于机器人策略",
+      "llm_evidence": "潜在空间中的高频动作块用于机器人策略",
+      "canonical_evidence": "潜在空间中的高频动作块用于机器人策略",
+      "llm_tldr_en": "Learns high-frequency action chunks in a VAE latent space to improve temporal and spatial consistency for robotic policies, with a reuse-then-refine strategy.",
+      "llm_tldr_cn": "机器人策略中高频动作难以同时保证时间平滑和空间一致性。提出将高频动作学习从动作空间转移到VAE潜在空间，并采用重用与精练策略，显著提升高频控制的一致性。",
+      "llm_tldr": "机器人策略中高频动作难以同时保证时间平滑和空间一致性。提出将高频动作学习从动作空间转移到VAE潜在空间，并采用重用与精练策略，显著提升高频控制的一致性。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.25063v1",
+      "source": "arxiv",
+      "title": "Reinforcement Learning for Laser Additive Manufacturing Scan-Order Optimisation: A Bilevel Proxy--FEA Diagnostic Framework for Reward and World-Model Diagnosis",
+      "abstract": "Reinforcement learning offers a promising approach for scan-order optimisation in laser additive manufacturing, where sequential scan decisions critically influence thermal accumulation, residual stress, distortion, and final part quality. A central challenge in applying RL to this domain lies in reward and world-model fidelity: full finite-element analysis is computationally prohibitive for dense in-the-loop evaluation, while cheap thermo-inspired proxy metrics, though efficient, may capture only partial aspects of the true thermo-mechanical objectives. This paper investigates a bilevel Proxy--FEA diagnostic framework for reward and world-model diagnosis in reinforcement-learning-guided scan-order optimisation. The lower level employs lightweight scan-path and thermo-inspired proxies for rapid candidate generation and preliminary policy-side screening, while the upper level utilises sparse Abaqus FEA simulations to provide simulation-based reference labels. The framework is examined on a simplified whole-track heating LDED32 stripe benchmark comprising ten representative scan strategies. Final-cooling residual Mises stress, U3 vertical distortion, and PEEQ plasticity metrics reveal an observed stress--distortion trade-off rather than a single monotonic quality objective. Within the evaluated set, the center_out strategy emerges as a robust compromise candidate, while raster_left_to_right and edge_in form opposing endpoints of the trade-off. Proxy--FEA alignment analysis shows that current cheap path-based metrics predominantly capture distortion-related (U3) behaviour and exhibit only weak correlation with the sparse FEA reference labels. These findings highlight that proxy-only reward designs risk misalignment in future RL training and underscore the value of sparse FEA reference signals for diagnostic-guided reward and world-model refinement prior to large-scale policy optimisation.",
+      "authors": [
+        "Xian Wu",
+        "Haoran Li",
+        "Dongbin Zhao",
+        "Ruiyao Zhang",
+        "Yuanqi Chu",
+        "Bin Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-05-24T13:17:05+00:00",
+      "link": "https://arxiv.org/pdf/2605.25063v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "query:LLM-manufact"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "RL for scan-order optimization in additive manufacturing",
+      "llm_evidence_cn": "增材制造扫描顺序优化的强化学习",
+      "llm_evidence": "增材制造扫描顺序优化的强化学习",
+      "canonical_evidence": "增材制造扫描顺序优化的强化学习",
+      "llm_tldr_en": "This paper proposes a bilevel Proxy-FEA diagnostic framework for reward and world-model diagnosis in RL for laser additive manufacturing scan-order optimization.",
+      "llm_tldr_cn": "强化学习在增材制造扫描顺序优化中具有潜力，但奖励和世界模型的保真度是核心挑战。本文提出一种双层代理-有限元诊断框架，用于评估奖励和世界模型的质量。该框架结合高效的代理指标和精确的有限元分析，在计算约束下诊断RL系统的可靠性，为实际制造优化提供指导。",
+      "llm_tldr": "强化学习在增材制造扫描顺序优化中具有潜力，但奖励和世界模型的保真度是核心挑战。本文提出一种双层代理-有限元诊断框架，用于评估奖励和世界模型的质量。该框架结合高效的代理指标和精确的有限元分析，在计算约束下诊断RL系统的可靠性，为实际制造优化提供指导。",
+      "llm_tags": [
+        "query:llm-or"
+      ],
+      "matched_query_tag": "query:llm-or",
+      "matched_query_text": "reinforcement learning for operations research",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.25424v1",
+      "source": "arxiv",
+      "title": "SeqRoute: Global Budget-Aware Sequential LLM Routing via Offline Reinforcement Learning",
+      "abstract": "Existing LLM routing frameworks treat queries as independent events, neglecting the sequential nature of real-world user sessions constrained by global computational budgets. This mismatch inevitably leads to budget bankruptcy: myopic routing policies exhaust resources on early interactions, forcing subsequent and often more complex queries onto inadequate models. We introduce SeqRoute, a framework that formulates multi-turn routing as a finite-horizon Markov Decision Process and solves it via offline reinforcement learning. By incorporating the remaining budget into the state space and training with Conservative Q-Learning (CQL), SeqRoute learns delayed gratification to strategically preserve resources for high-stakes turns later in the session. To overcome data starvation, we propose Hindsight Budget Relabeling (HBR). This technique retrospectively simulates historical trajectories under diverse hypothetical budgets, expanding 10,000 raw sessions into 2.38 million transitions enriched with critical bankruptcy signals. At deployment, a dynamic $λ$-sweep mechanism enables zero-shot navigation of the cost-quality Pareto frontier without retraining. Extensive evaluations demonstrate that SeqRoute reduces operational costs by 6.0-73.5% while maintaining or improving quality, and suppresses bankruptcy rates to under 1%, strictly dominating behavior cloning, budget-aware heuristics, and static baselines across the entire Pareto frontier.",
+      "authors": [
+        "Zhongling Xu",
+        "Shunan Zheng",
+        "Wei Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-25T04:52:10+00:00",
+      "link": "https://arxiv.org/pdf/2605.25424v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Offline RL for sequential LLM routing with budget constraints",
+      "llm_evidence_cn": "离线RL用于带预算约束的顺序LLM路由",
+      "llm_evidence": "离线RL用于带预算约束的顺序LLM路由",
+      "canonical_evidence": "离线RL用于带预算约束的顺序LLM路由",
+      "llm_tldr_en": "SeqRoute formulates LLM routing as a finite-horizon MDP and solves with offline RL, preserving budget for high-stakes turns.",
+      "llm_tldr_cn": "该论文提出SeqRoute框架，将多轮LLM路由建模为有限时域MDP，通过离线强化学习（CQL）学习延迟满足策略，有效避免预算枯竭。实验表明该方法在资源受限场景下优于传统路由策略。",
+      "llm_tldr": "该论文提出SeqRoute框架，将多轮LLM路由建模为有限时域MDP，通过离线强化学习（CQL）学习延迟满足策略，有效避免预算枯竭。实验表明该方法在资源受限场景下优于传统路由策略。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.24953v1",
+      "source": "arxiv",
+      "title": "Towards Multi-Turn Dialog Systems for Industrial Asset Operations and Maintenance",
+      "abstract": "Industrial asset operations and maintenance question answering is inherently multi-turn, iterative, and highly dependent on external tool invocation. However, the conventional plan-execute single-agent architecture exhibits clear limitations in maintaining cross-turn context, and reusing intermediate results. In this paper, we present a multi-turn dialog system designed for industrial scenarios based on a supervisor-specialist multi-agent architecture. To alleviate tool invocation bottlenecks, the system incorporates structured artifact reuse, dynamic replanning, and parallel tool execution. Evaluation results show that our system achieves better response quality compared with the baseline, with planning effectiveness increasing by 54.5% and task completion improving by 37.8%. System profiling further shows that cross-turn artifact reuse effectively reduces redundant tool invocation, decreasing the tool-time share from 47.3% to 26.3% and making turns 2-5 approximately 4.2x faster than the first turn.",
+      "authors": [
+        "Chengrui Li",
+        "Rujing Li",
+        "Yitong Bai",
+        "Rui Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-24T09:06:38+00:00",
+      "link": "https://arxiv.org/pdf/2605.24953v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:llm-planning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multi-turn dialog system for industrial asset O&M with multi-agent architecture",
+      "llm_evidence_cn": "面向工业资产运维的多轮对话系统，采用多智能体架构",
+      "llm_evidence": "面向工业资产运维的多轮对话系统，采用多智能体架构",
+      "canonical_evidence": "面向工业资产运维的多轮对话系统，采用多智能体架构",
+      "llm_tldr_en": "A supervisor-specialist multi-agent dialog system for industrial asset operations and maintenance, improving planning effectiveness by 54.5% through artifact reuse and dynamic replanning.",
+      "llm_tldr_cn": "工业资产运维问答是多轮、迭代、依赖外部工具的复杂任务。现有单智能体架构维护上下文不足。提出监督-专家多智能体对话系统，通过结构化工件复用和动态重规划，将规划有效性提升54.5%，并实现并行工具执行。",
+      "llm_tldr": "工业资产运维问答是多轮、迭代、依赖外部工具的复杂任务。现有单智能体架构维护上下文不足。提出监督-专家多智能体对话系统，通过结构化工件复用和动态重规划，将规划有效性提升54.5%，并实现并行工具执行。",
+      "llm_tags": [
+        "query:llm-manufact"
+      ],
+      "matched_query_tag": "query:llm-manufact",
+      "matched_query_text": "LLM applications in industrial automation",
+      "matched_requirement_id": "req-42",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.25247v1",
+      "source": "arxiv",
+      "title": "Kavier: Exploring Performance, Sustainability, and Efficiency of LLM Ecosystems under Inference through Cache-Aware Discrete-Event Simulation",
+      "abstract": "Large Language Models (LLMs) are widely used by our increasingly digitalized society, but raise sustainability, performance, and financial concerns, especially as inference workloads grow. To improve the design and operation of LLM ecosystems, we envision simulators and simulation-based digital twins becoming primary decision-making tools. LLM ecosystems leverage many heterogeneous components, making simulation a non-trivial, yet critical operation. The simulation challenge is exacerbated by the absence of a comprehensive reference architecture of LLM ecosystems; the lack of such a conceptual model can be costly and could misguide the designers and engineers. Without a reference architecture, even the most experienced stakeholders could tinker in researching, engineering, or maintaining LLM ecosystems. In this work, we bring a three-fold contribution to the scientific community. Firstly, we synthesize, propose, and validate a reference architecture (RA) of LLM ecosystems under inference. Then, adhering to the reference architecture, we design Kavier, the first simulation instrument able to predict the performance, sustainability, and efficiency of LLM ecosystems under inference, through discrete-event and cache-aware simulation, focusing on Key-Value-(KV-)Caching and prompt prefix caching policies. Through experiments with a Kavier prototype and real-world traces, (i) we measure the accuracy of Kavier and its performance in massive-scale simulations, (ii) we compare the performance of different KV-Caching policies, and (iii) we analyze the performance, sustainability, and efficiency of LLM ecosystems under various prefix caching policies. Overall, we show that Kavier enables operators, researchers, and engineers to predict LLM ecosystems in a time, performance, and cost-efficient way.",
+      "authors": [
+        "Radu Nicolae",
+        "Alexandru Iosup",
+        "Animesh Trivedi",
+        "Jesse Donkervliet"
+      ],
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC"
+      ],
+      "published": "2026-05-24T20:14:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.25247v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:llm-planning",
+        "query:llm-twin"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "LLM ecosystem simulation digital twin",
+      "llm_evidence_cn": "LLM生态系统仿真与数字孪生",
+      "llm_evidence": "LLM生态系统仿真与数字孪生",
+      "canonical_evidence": "LLM生态系统仿真与数字孪生",
+      "llm_tldr_en": "Kavier proposes a cache-aware discrete-event simulator for LLM ecosystems, aiming to be a digital twin for performance and sustainability analysis.",
+      "llm_tldr_cn": "LLM推理负载带来可持续性和性能挑战。Kavier提出了一种缓存感知的离散事件仿真器，作为LLM生态系统的数字孪生，支持性能、可持续性和效率分析。该工具填补了参考架构缺失的空白，有助于优化设计。",
+      "llm_tldr": "LLM推理负载带来可持续性和性能挑战。Kavier提出了一种缓存感知的离散事件仿真器，作为LLM生态系统的数字孪生，支持性能、可持续性和效率分析。该工具填补了参考架构缺失的空白，有助于优化设计。",
+      "llm_tags": [
+        "query:llm-twin"
+      ],
+      "matched_query_tag": "query:llm-twin",
+      "matched_query_text": "digital twin technology",
+      "matched_requirement_id": "req-17",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.26066v1",
+      "source": "arxiv",
+      "title": "The Evolution of Digital Twins from Reactive to Agentic Systems",
+      "abstract": "Digital twins are evolving into self-learning, autonomous systems that link models, data, and human interaction. Realizing their full potential depends on interoperability, standardization, and the integration of artificial intelligence and advanced computational reasoning across sectors.",
+      "authors": [
+        "Omer San",
+        "Adil Rasheed",
+        "Eda Bozdemir",
+        "Jun Deng"
+      ],
+      "primary_category": "cs.CE",
+      "categories": [
+        "cs.CE",
+        "cs.ET"
+      ],
+      "published": "2026-05-25T17:30:09+00:00",
+      "link": "https://arxiv.org/pdf/2605.26066v1",
+      "tags": [
+        "keyword:llm-twin",
+        "query:LLM-manufact"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Evolution of digital twins to agentic systems with AI integration",
+      "llm_evidence_cn": "数字孪生从反应式向代理式系统演进，整合AI",
+      "llm_evidence": "数字孪生从反应式向代理式系统演进，整合AI",
+      "canonical_evidence": "数字孪生从反应式向代理式系统演进，整合AI",
+      "llm_tldr_en": "Argues for interoperability and AI integration to realize autonomous digital twins.",
+      "llm_tldr_cn": "该论文讨论数字孪生从反应式向自学习自主系统的演进，强调互操作性、标准化和AI集成的重要性。为数字孪生的未来发展提供了方向性指导。",
+      "llm_tldr": "该论文讨论数字孪生从反应式向自学习自主系统的演进，强调互操作性、标准化和AI集成的重要性。为数字孪生的未来发展提供了方向性指导。",
+      "llm_tags": [
+        "query:llm-twin"
+      ],
+      "matched_query_tag": "query:llm-twin",
+      "matched_query_text": "digital twin technology",
+      "matched_requirement_id": "req-17",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.25151v1",
+      "source": "arxiv",
+      "title": "Representation Without Control: Testing the Realization Effect in Language Models",
+      "abstract": "Large language models are increasingly used as behavioral simulators, but it remains unclear when their outputs reflect human-like cognitive mechanisms rather than prompt-sensitive surface patterns. We study this question through the realization effect, a well-characterized finding in behavioral economics in which risk-taking differs systematically after paper versus realized gains and losses. We evaluate LLM behavior at three levels: prompt-only behavioral sensitivity, linear readout of internal representations, and causal control via activation steering. Prompt-only results show systematic condition sensitivity, but the directional pattern does not reproduce human realization-effect predictions. Gemma's residual stream contains a linearly decodable realization-status signal at layer 18 that generalizes to held-out prompts. Steering along this direction does not, however, reliably shift downstream risk choices, a null result that holds across positive scales and in a negative sign-symmetry run. Behavioral sensitivity, latent readout, and causal control are three distinct properties that do not automatically co-occur, and successful latent readout is insufficient evidence that a model behaviorally relies on a representation during downstream decision-making.",
+      "authors": [
+        "Ciarán Walsh",
+        "Emilio Barkett"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CE"
+      ],
+      "published": "2026-05-24T16:07:34+00:00",
+      "link": "https://arxiv.org/pdf/2605.25151v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-twin"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Testing realization effect in LLMs as behavioral simulators",
+      "llm_evidence_cn": "测试LLM作为行为模拟器中的实现效应",
+      "llm_evidence": "测试LLM作为行为模拟器中的实现效应",
+      "canonical_evidence": "测试LLM作为行为模拟器中的实现效应",
+      "llm_tldr_en": "This paper investigates whether LLMs exhibit the realization effect from behavioral economics using prompt-only and internal representation analysis.",
+      "llm_tldr_cn": "该论文研究大规模语言模型是否在行为经济学中展现出实现效应。通过提示行为分析、线性读出和激活控制等方法，发现LLM无法复现人类行为模式。",
+      "llm_tldr": "该论文研究大规模语言模型是否在行为经济学中展现出实现效应。通过提示行为分析、线性读出和激活控制等方法，发现LLM无法复现人类行为模式。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.25381v1",
+      "source": "arxiv",
+      "title": "Not only where, But when: Temporal Scheduling for RLVR",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a core technique for post-training of Large Language Models (LLMs). While policy optimization is driven by all sampled tokens under a globally broadcast scalar reward, the heterogeneous policy behaviors exhibited along trajectories are largely overlooked without differentiation. Existing works address this by credit allocation, including token-level advantage reweighting, and selective token optimization, however, the allocation criterion are principally stagnant throughout training, limiting resilient policy evolution. In this work, we argue that \\textit{when} learning signals are scheduled can be as important as \\textit{where} they are allocated across tokens, and introduce the temporal dimension that scheduling the credit allocation criteria over the course of RLVR optimization. We find that prioritizing targeted tokens emphasized with specific policy behaviors, and gradually attenuating toward general optimization leads to more stable and efficient learning dynamics. Furthermore, we show that simple trajectory percentiles provide a natural perspective for distinguishing policy behaviors, and works effectively with temporal scheduling. Our analysis reveals that standard optimization substantially sacrifices policy entropy when simultaneously accommodating heterogeneous behaviors, whereas temporal scheduling yields healthier policy evolution dynamics. Experiments across mathematical and general reasoning benchmarks demonstrate consistent improvements, suggesting that temporal scheduling constitutes a promising optimization dimension.",
+      "authors": [
+        "Jinghao Zhang",
+        "Ruilin Li",
+        "Feng Zhao",
+        "Jiaqi Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-25T03:10:51+00:00",
+      "link": "https://arxiv.org/pdf/2605.25381v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:llm-planning"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Temporal scheduling of learning signals in reinforcement learning with verifiable rewards for LLMs",
+      "llm_evidence_cn": "面向LLM的可验证奖励强化学习中的时间调度",
+      "llm_evidence": "面向LLM的可验证奖励强化学习中的时间调度",
+      "canonical_evidence": "面向LLM的可验证奖励强化学习中的时间调度",
+      "llm_tldr_en": "Argues that when learning signals are scheduled is as important as where, introducing temporal scheduling for RLVR in LLM post-training.",
+      "llm_tldr_cn": "现有RLVR训练中学习信号分配标准停滞，忽视轨迹中的策略异质性。论文引入时间维度，动态调度学习信号，提升LLM后训练中的策略演化弹性和性能。",
+      "llm_tldr": "现有RLVR训练中学习信号分配标准停滞，忽视轨迹中的策略异质性。论文引入时间维度，动态调度学习信号，提升LLM后训练中的策略演化弹性和性能。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model for reinforcement learning reward function design",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.26321v1",
+      "source": "arxiv",
+      "title": "Anchor: Mitigating Artifact Drift in Agent Benchmark Generation",
+      "abstract": "AI agents are beginning to complete valuable, long-horizon business operations tasks, but training and evaluation environments for enterprise work still struggle to balance realism, verifiability, and scale. Environment and task creation frequently suffers from a failure mode we call artifact drift: when instructions, environments, oracles, and verifiers are created by loosely coupled processes, they frequently disagree on what a task requires, producing environments that are unsolvable, reward-hackable, or inconsistent. We introduce Anchor, a task-generation pipeline that formalizes domain experts' specifications of business workflows into constraint optimization programs. From a single parametric specification, the pipeline jointly produces a natural-language instruction, environment configuration, solver-certified ground-truth solution, and state-based verifier. With Anchor, altering parameters yields new tasks with controlled difficulty and known optimal solutions, producing harness-agnostic environments whose rewards depend solely on end-state business correctness. We apply Anchor to produce ERP-Bench: a benchmark of 300 long-horizon tasks spanning procurement and manufacturing workflows in a production-grade ERP system. We find that generation parameters predict realized difficulty, and that frontier models satisfy explicit task constraints in 26.1% of trials but reach a fully optimal solution in only 17.4% of trials. Overall, we show that Anchor and ERP-Bench offer a concrete recipe for building auditable evaluation environments for economically valuable agent work. We release the task generator and ERP-Bench dataset at erpbench.ai",
+      "authors": [
+        "Maksim Ivanov",
+        "Abhijay Rana"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-25T20:44:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.26321v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-manufact",
+        "query:evolution-rl",
+        "query:lh",
+        "query:llm-planning"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Constraint optimization programs for business workflow benchmarks",
+      "llm_evidence_cn": "用于业务流程基准的约束优化程序",
+      "llm_evidence": "用于业务流程基准的约束优化程序",
+      "canonical_evidence": "用于业务流程基准的约束优化程序",
+      "llm_tldr_en": "Introduces Anchor, a pipeline generating consistent agent benchmarks from constraint optimization programs, mitigating artifact drift in business operations tasks.",
+      "llm_tldr_cn": "针对智能体基准生成中的人工漂移问题，提出Anchor流程，将领域专家规范转化为约束优化程序，联合生成指令、环境和验证器，确保任务一致性。",
+      "llm_tldr": "针对智能体基准生成中的人工漂移问题，提出Anchor流程，将领域专家规范转化为约束优化程序，联合生成指令、环境和验证器，确保任务一致性。",
+      "llm_tags": [
+        "query:llm-or"
+      ],
+      "matched_query_tag": "query:llm-or",
+      "matched_query_text": "operations research optimization techniques",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.25604v1",
+      "source": "arxiv",
+      "title": "DVAO: Dynamic Variance-adaptive Advantage Optimization for Multi-reward Reinforcement Learning",
+      "abstract": "Reinforcement Learning has become a standard paradigm for aligning Large Language Models with human intent and task requirements. While Group Relative Policy Optimization offers an efficient, value-model-free alternative to Proximal Policy Optimization, adapting it to real-world multi-reward settings remains challenging. Standard scalarization practices, such as Reward Combination and Advantage Combination, suffer from significant drawbacks: Reward Combination frequently generates advantages with excessively large squared magnitudes that lead to training instability, while Advantage Combination relies on static hyperparameters and ignores cross-objective correlations. To address these limitations, we propose Dynamic Variance-adaptive Advantage Optimization (DVAO), which dynamically adjusts combination weights based on the empirical reward variance of each objective within a rollout group, effectively up-weighting objectives with a stronger learning signal while suppressing noisy ones. We mathematically prove that DVAO maintains bounded advantage magnitudes for stable training and introduces a self-adaptive cross-objective regularization mechanism. Extensive experiments on mathematical reasoning and tool-use benchmarks using Qwen3 and Qwen2.5 models demonstrate that DVAO significantly outperforms baseline methods, achieving a superior multi-objective Pareto frontier and robust training stability.",
+      "authors": [
+        "Guochao Jiang",
+        "Jingyi Song",
+        "Guofeng Quan",
+        "Chuzhan Hao",
+        "Guohua Liu",
+        "Yuewei Zhang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-05-25T08:55:16+00:00",
+      "link": "https://arxiv.org/pdf/2605.25604v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:evolution-rl",
+        "query:llm-planning"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "RL for LLM alignment with DVAO",
+      "llm_evidence_cn": "用于LLM对齐的RL算法DVAO",
+      "llm_evidence": "用于LLM对齐的RL算法DVAO",
+      "canonical_evidence": "用于LLM对齐的RL算法DVAO",
+      "llm_tldr_en": "DVAO proposes a dynamic variance-adaptive advantage optimization for multi-reward RL used in LLM alignment.",
+      "llm_tldr_cn": "该论文提出动态方差自适应优势优化（DVAO）方法，用于多奖励强化学习场景下的LLM对齐。针对现有标量化方法的缺陷，DVAO通过自适应调整方差和考虑跨目标相关性，提高了训练稳定性。",
+      "llm_tldr": "该论文提出动态方差自适应优势优化（DVAO）方法，用于多奖励强化学习场景下的LLM对齐。针对现有标量化方法的缺陷，DVAO通过自适应调整方差和考虑跨目标相关性，提高了训练稳定性。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.25558v1",
+      "source": "arxiv",
+      "title": "Beyond Query Memorization: Large Language Model Routing with Query Decomposition and Historical Matching",
+      "abstract": "Optimizing the trade-off among predictive performance and computational cost is a central focus in the deployment of Large Language Models (LLMs). Current routing methods primarily rely on direct mapping from queries to models based on surface-level features, making them susceptible to the memorization trap and leading to poor generalizability on out-of-distribution (OOD) data. In this paper, we propose DecoR, a novel routing framework that recasts the routing task as a matching process of sifting similar queries from historical logs, effectively mitigating the memorization trap. To enhance matching accuracy, we introduce a query capability deconstruction method that decouples linguistic surface forms from task-intrinsic requirements, directing matching toward capability dimensions to ground decisions in essential task attributes. Furthermore, we develop CodaSet, a comprehensive benchmark for assessing routing generalization, where experimental results demonstrate that DecoR maintains superior accuracy while substantially lowering inference costs across both in-distribution and OOD settings. All the codes and data are available at https://github.com/lvbotenbest/DecoR.",
+      "authors": [
+        "Bo Lv",
+        "Jingbo Sun"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-25T08:12:58+00:00",
+      "link": "https://arxiv.org/pdf/2605.25558v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:LLM-manufact",
+        "keyword:lh",
+        "keyword:llm-planning",
+        "keyword:llm-twin",
+        "query:LLM-OR",
+        "query:LLM-RL",
+        "query:LLM-manufact",
+        "query:lh",
+        "query:llm-twin"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "large language model routing with query decomposition and historical matching",
+      "llm_evidence_cn": "使用查询分解和历史匹配的LLM路由",
+      "llm_evidence": "使用查询分解和历史匹配的LLM路由",
+      "canonical_evidence": "使用查询分解和历史匹配的LLM路由",
+      "llm_tldr_en": "DecoR recasts LLM routing as matching queries to similar historical logs via query capability deconstruction, improving OOD generalization.",
+      "llm_tldr_cn": "当前LLM路由方法基于表面特征映射易陷入记忆陷阱，对分布外数据泛化差。提出DecoR框架，将路由重新定义为基于查询能力解构的历史匹配过程，提升路由准确性和泛化性。",
+      "llm_tldr": "当前LLM路由方法基于表面特征映射易陷入记忆陷阱，对分布外数据泛化差。提出DecoR框架，将路由重新定义为基于查询能力解构的历史匹配过程，提升路由准确性和泛化性。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "large language model",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.26371v1",
+      "source": "arxiv",
+      "title": "Exploiting Local Dynamics Regularity for Reusable Skills in Offline Hierarchical RL",
+      "abstract": "Hierarchical Reinforcement Learning (HRL) promises to solve long-horizon Reinforcement Learning (RL) tasks more efficiently than non-hierarchical counterparts by discovering and reusing temporally-extended skills. However, obtaining skills that are actually reusable remains an open challenge. Towards this end, we focus on abstractions that exploit the intuition of local dynamics: local transitions in different global contexts require similar kinds of action sequences. By aligning these contexts with the action sequences they require, we are able to learn which skills to reuse and where to reuse them. In principle, this information should benefit many HRL algorithms, where high-level policies have to reason about the low-level skills they use. The resulting algorithm CARL (Contrastive Action-based Representations for Reusable Local Control) shows both qualitative clustering of meaningful skills in complex humanoid environments and improved downstream performance on the OGBench benchmark when integrated with HIQL.",
+      "authors": [
+        "Sarthak Dayal",
+        "Abhinav Peri",
+        "Carl Qi",
+        "Claas Voelcker",
+        "Alexander Levine",
+        "Caleb Chuck",
+        "Amy Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-25T22:39:14+00:00",
+      "link": "https://arxiv.org/pdf/2605.26371v1",
+      "tags": [
+        "keyword:LLM-OR",
+        "keyword:LLM-RL",
+        "keyword:evolution-rl",
+        "keyword:lh",
+        "query:LLM-RL",
+        "query:evolution-rl"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Offline hierarchical RL with reusable skills based on local dynamics regularity",
+      "llm_evidence_cn": "基于局部动态规律性的离线分层强化学习与可复用技能",
+      "llm_evidence": "基于局部动态规律性的离线分层强化学习与可复用技能",
+      "canonical_evidence": "基于局部动态规律性的离线分层强化学习与可复用技能",
+      "llm_tldr_en": "Proposes a method to learn reusable skills in offline HRL by exploiting local dynamics regularity, improving long-horizon task efficiency.",
+      "llm_tldr_cn": "针对分层强化学习中技能复用困难的问题，利用局部动态规律性对齐上下文与动作序列，学习何时何地复用技能，在离线设置下提升长期任务效率。",
+      "llm_tldr": "针对分层强化学习中技能复用困难的问题，利用局部动态规律性对齐上下文与动作序列，学习何时何地复用技能，在离线设置下提升长期任务效率。",
+      "llm_tags": [
+        "query:llm-rl"
+      ],
+      "matched_query_tag": "query:llm-rl",
+      "matched_query_text": "reinforcement learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
