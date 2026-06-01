@@ -176,6 +176,66 @@ subscriptions:
           source: manual
           note: ''
       updated_at: '2026-06-01T17:24:13.278Z'
+    - tag: llm-planning
+      description: 帮助我查找LLM在动态生产环境中的论文 关注LLM的调度 planning 等等
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: large language model planning
+          keyword_cn: 大语言模型规划
+          query: large language model planning in dynamic environments
+        - keyword: LLM scheduling
+          keyword_cn: LLM调度
+          query: LLM scheduling in production
+        - keyword: dynamic production environment
+          keyword_cn: 动态生产环境
+          query: production environment dynamic workload LLM
+      intent_queries:
+        - query: papers on LLM scheduling in dynamic production environments
+          query_cn: 动态生产环境中LLM调度的论文
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T17:25:47.878Z'
+    - tag: LLM-manufact
+      description: 帮助查找关于大型语言模型（LLM）在制造业中应用的论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: large language model
+          keyword_cn: 大型语言模型
+          query: large language model
+        - keyword: manufacturing industry
+          keyword_cn: 制造业
+          query: manufacturing industry
+        - keyword: industrial automation
+          keyword_cn: 工业自动化
+          query: industrial automation
+        - keyword: smart manufacturing
+          keyword_cn: 智能制造
+          query: smart manufacturing
+        - keyword: production optimization
+          keyword_cn: 生产优化
+          query: production optimization
+      intent_queries:
+        - query: how are large language models used in manufacturing
+          query_cn: 大型语言模型在制造业中的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: LLM applications in industrial automation
+          query_cn: LLM在工业自动化中的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: role of generative AI in smart manufacturing
+          query_cn: 生成式AI在智能制造中的作用
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T17:26:26.834Z'
 source_backends:
   arxiv:
     papers_table: arxiv_papers
