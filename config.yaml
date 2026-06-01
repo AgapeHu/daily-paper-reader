@@ -25,3 +25,169 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: LLM-OR
+      description: 请帮助我查找有关LLM和operation research有关的文章
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: large language models
+          keyword_cn: 大语言模型
+          query: applications of large language models in operations research
+        - keyword: operations research
+          keyword_cn: 运筹学
+          query: operations research optimization techniques
+        - keyword: combinatorial optimization
+          keyword_cn: 组合优化
+          query: combinatorial optimization problems solved by LLM
+        - keyword: reinforcement learning
+          keyword_cn: 强化学习
+          query: reinforcement learning for operations research
+      intent_queries:
+        - query: large language models for operations research optimization
+          query_cn: 大语言模型用于运筹学优化
+          enabled: true
+          source: manual
+          note: ''
+        - query: large language model applications in combinatorial optimization and decision making
+          query_cn: 大语言模型在组合优化和决策中的应用
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T16:15:53.727Z'
+    - tag: LLM-RL
+      description: 查找有关LLM增强强化学习的文章，例如LLM帮助设计RL的状态、奖励函数、动作等
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: large language model
+          keyword_cn: 大语言模型
+          query: large language model
+        - keyword: reinforcement learning
+          keyword_cn: 强化学习
+          query: reinforcement learning
+        - keyword: reward function design
+          keyword_cn: 奖励函数设计
+          query: reward function design using large language model
+        - keyword: state representation
+          keyword_cn: 状态表示
+          query: state representation with language model
+        - keyword: action space
+          keyword_cn: 动作空间
+          query: action space design with large language model
+        - keyword: policy design
+          keyword_cn: 策略设计
+          query: policy design by large language model
+      intent_queries:
+        - query: large language model for reinforcement learning reward function design
+          query_cn: 利用大语言模型进行强化学习奖励函数设计
+          enabled: true
+          source: manual
+          note: ''
+        - query: large language model assists reinforcement learning state representation
+          query_cn: 大语言模型辅助强化学习状态表示
+          enabled: true
+          source: manual
+          note: ''
+        - query: action space design using large language model in reinforcement learning
+          query_cn: 在强化学习中使用大语言模型设计动作空间
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T17:19:18.753Z'
+    - tag: llm-twin
+      description: 帮助我查找有关LLM 和 digital twin的论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: large language model
+          keyword_cn: 大语言模型
+          query: large language model digital twin
+        - keyword: digital twin
+          keyword_cn: 数字孪生
+          query: digital twin technology
+        - keyword: LLM digital twin integration
+          keyword_cn: LLM与数字孪生集成
+          query: integration of large language model and digital twin
+        - keyword: digital twin simulation
+          keyword_cn: 数字孪生仿真
+          query: digital twin simulation with language model
+        - keyword: knowledge graph
+          keyword_cn: 知识图谱数字孪生
+          query: knowledge graph enhanced digital twin
+      intent_queries:
+        - query: research papers on integrating large language models with digital twins
+          query_cn: 关于大语言模型与数字孪生集成的研究论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: applications of large language models in digital twin environments
+          query_cn: 大语言模型在数字孪生环境中的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: survey on large language model and digital twin fusion
+          query_cn: 大语言模型与数字孪生融合的综述
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T17:23:05.416Z'
+    - tag: evolution-rl
+      description: 帮助我查找有关进化强化学习的论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: evolutionary reinforcement learning
+          keyword_cn: 进化强化学习
+          query: evolutionary reinforcement learning methods and techniques
+        - keyword: evolutionary algorithms
+          keyword_cn: 进化算法
+          query: evolutionary algorithms for reinforcement learning
+        - keyword: genetic algorithms reinforcement learning
+          keyword_cn: 遗传算法强化学习
+          query: genetic algorithms applied to reinforcement learning
+        - keyword: neuroevolution
+          keyword_cn: 神经进化
+          query: neuroevolution for reinforcement learning tasks
+        - keyword: evolution strategies reinforcement learning
+          keyword_cn: 进化策略强化学习
+          query: evolution strategies in reinforcement learning
+        - keyword: coevolutionary reinforcement learning
+          keyword_cn: 共同进化强化学习
+          query: coevolutionary approaches to reinforcement learning
+      intent_queries:
+        - query: evolutionary reinforcement learning papers
+          query_cn: 进化强化学习论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: applications of evolutionary algorithms in reinforcement learning
+          query_cn: 进化算法在强化学习中的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: neuroevolution for deep reinforcement learning
+          query_cn: 用于深度强化学习的神经进化
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T17:24:13.278Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
