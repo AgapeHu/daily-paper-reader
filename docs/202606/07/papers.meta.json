@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-07",
+  "date": "2026-06-07",
+  "generated_at": "2026-06-07T21:46:50",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/07/2605.29268v2-compute-allocation-in-evolutionary-search-from-depth-breadth-to-multi-armed-bandits",
+      "section": "deep",
+      "title_en": "Compute Allocation in Evolutionary Search: From Depth-Breadth to Multi-Armed Bandits",
+      "authors": "Sixue Xing, Haoyu He, Kerui Wu, Zhuo Yang, Haozheng Luo, Tianfan Fu, Aarthy Nagarajan",
+      "date": "2026-05-28",
+      "pdf": "https://arxiv.org/pdf/2605.29268v2",
+      "score": "8.0",
+      "evidence": "LLM引导的进化搜索用于组合任务",
+      "tldr": "LLM引导的进化搜索在数学与组合任务中表现优异，但计算预算分配缺乏指导。本文通过系统实验发现适应性-计算包络和双线性深度-广度规律，并据此提出基于多臂老虎机的自适应进化算法BaSE。该算法在固定LLM调用预算下显著提升了搜索可靠性和最终性能，为组合优化中的LLM应用提供了实用指导。",
+      "tags": "query:evolution-rl",
+      "abstract_en": "LLM-guided evolutionary search (Evolve systems) has reached state-of-the-art results on mathematical and combinatorial tasks, yet most existing systems report only the best of many runs and leave the run-to-run distribution undocumented. We ask how a fixed budget of LLM calls should be allocated, and how reliably a single run reaches the reported numbers. Sweeping the depth-breadth grid over five models and three tasks, we identify two empirical regularities: a fitness-compute envelope along which capability ordering largely collapses on effective FLOPs, and a bilinear depth-breadth fit with task-specific interaction; both are gated by model-task capability. Motivated by these regularities, we propose BaSE (Bandit-based Self-Evolving), a multi-armed bandit that allocates LLM calls across parallel trajectories. Without changing the model, prompt, or evaluator, BaSE improves mean fitness by 12.3% over the strongest island-protocol baseline across 8 (model, task) cells, with the largest gains on high-variance settings: a reliability gain from allocation alone.",
+      "source": "arxiv",
+      "selection_source": "carryover_cache"
+    }
+  ],
+  "errors": []
+}

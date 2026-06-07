@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-07 <!--dpr-date:20260607-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/07/2605.29268v2-compute-allocation-in-evolutionary-search-from-depth-breadth-to-multi-armed-bandits" data-sidebar-item="{&quot;title&quot;: &quot;Compute Allocation in Evolutionary Search: From Depth-Breadth to Multi-Armed Bandits&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.29268v2-compute-allocation-in-evolutionary-search-from-depth-breadth-to-multi-armed-bandits&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;evolution-rl&quot;}], &quot;evidence&quot;: &quot;LLM引导的进化搜索用于组合任务&quot;}">Compute Allocation in Evolutionary Search: From Depth-Breadth to Multi-Armed Bandits</a>
   * 2026-06-01 <!--dpr-date:20260601-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/01/2605.25246v1-frontieror-benchmarking-llms-capacity-for-efficient-algorithm-design-in-large-scale-optimization" data-sidebar-item="{&quot;title&quot;: &quot;FrontierOR: Benchmarking LLMs&#x27; Capacity for Efficient Algorithm Design in Large-Scale Optimization&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.25246v1-frontieror-benchmarking-llms-capacity-for-efficient-algorithm-design-in-large-scale-optimization&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;llm-or&quot;}], &quot;evidence&quot;: &quot;评估LLM在大规模运筹优化中设计高效算法能力的基准&quot;}">FrontierOR: Benchmarking LLMs&#x27; Capacity for Efficient Algorithm Design in Large-Scale Optimization</a>
